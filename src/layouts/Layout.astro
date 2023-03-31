@@ -1,0 +1,32 @@
+---
+//component imports
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// Props
+interface Props {
+	title: string;
+	navColor: "blue" | "off-white";
+}
+
+const { 
+	title,
+	navColor 
+} = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Nav color={navColor}/>
+		<slot />
+		<Footer />
+	</body>
+</html>
+

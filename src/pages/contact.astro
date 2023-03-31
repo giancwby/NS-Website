@@ -1,0 +1,161 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+//Component imports
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro'
+import Input from '../components/Input.astro';
+---
+
+<Layout navColor="blue" title="Contact Us">
+    <section>
+        <div>
+            <div>
+                <h2>Reach Out and Join Our Community</h2>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+            </div>
+            <img src="/images/contactus-hero.png" alt="">
+        </div>
+    </section>
+    <section>
+        <div>
+            <div>
+                <h1>Want to Meet??</h1>
+                <h2>Schedule a Meeting</h2>
+            </div>
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <Button color="black" href="" isUppercase={true} text="Book a Meeting"/>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>Drop Us a Message</h2>
+            <form target="_blank" action="https://formsubmit.co/gian@nsdesign.ph" method="POST">
+                <div>
+                    <div>
+                        <Input type="text" placeholder="Name"/>
+                        <Input type="email" placeholder="Email"/>
+                    </div>
+                    <Input type="text-area" placeholder="What's on your mind?"/>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div>
+                <h2>Prefer to Meet in Person? <br> Let's have coffee.</h2>
+                <p class="large-body">We’re stationed in Studio Kapitbahay. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+            <img src="/images/contactus-end.png" alt="">
+        </div>
+    </section>
+</Layout>
+
+<style>
+    section:nth-of-type(1) {
+        background-color: var(--blue);
+        padding: 80px 120px 120px 120px;
+        color: var(--off-white);
+
+        > div {
+            display: flex;
+            flex-direction: row;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 80px;
+            }
+
+            > img {
+                width: 460px;
+            }
+        }
+    }
+
+    section:nth-of-type(2) {
+        background-color: var(--off-white);
+        padding: 160px 120px;
+        text-align: center;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    }
+
+    section:nth-of-type(3), section:nth-of-type(4) {
+        background-color: var(--off-white);
+        padding: 80px 120px;
+    }
+
+    section:nth-of-type(3) {
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            > form > div {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                > div {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 32px;
+                }
+            }
+        }
+    }
+
+
+    section:nth-of-type(4) {
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            > img {
+                width: 1116px;
+                align-self: center;
+            }
+        }
+    } 
+
+    button {
+        padding: 14px 24px;
+        font-family: Apercu-Bold;
+        font-size: var(--small-body);
+        border-radius: 8px;
+        width: fit-content;
+        color: var(--black);
+        background-color: transparent;
+        border: solid 2px var(--black);
+        text-transform: uppercase;
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--black);
+            color: var(--off-white);
+        }
+    }
+</style>

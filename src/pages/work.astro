@@ -1,0 +1,39 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Component imports
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout navColor="off-white" title="Work">
+    <main>
+        <section>
+            <div>
+                <div>
+                    <h2>These brands were eager to</h2>
+                    <h1>tell their story</h1>
+                </div>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                <img src="../../icons/down-black-arrow.svg" alt="">
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    section:nth-of-type(1) {
+        background-color: var(--off-white);
+        color: var(--black);
+        padding: 48px 120px;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            text-align: center;
+        }
+    }
+</style>

@@ -1,0 +1,148 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Component imports
+import Link from './Link.astro';
+import Button from './Button.astro';
+import SecondaryLogo from './SecondaryLogo.astro';
+
+// Props
+interface Props {
+    color: "blue" | "off-white";
+}
+
+const {
+    color
+} = Astro.props as Props;
+---
+
+{
+    color === "blue" && (
+    <nav class={color}>
+        <ul>
+            <li>
+                <Link 
+                    color="white"
+                    href="work"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Work"
+                />
+            </li>
+            <li>
+                <Link 
+                    color="white"
+                    href="services"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Services"
+                />
+            </li>
+            <li>
+                <a href="/">
+                    <SecondaryLogo size="small" type="acronym"/>    
+                </a>
+            </li>
+            <li>
+                <Link 
+                    color="white"
+                    href="about"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="About"
+                />
+            </li>
+            <li>
+                <Button 
+                    color="whiteToBlue"
+                    href="contact"
+                    isUppercase={true}
+                    text="Contact Us"
+                />
+            </li>
+        </ul>
+    </nav>
+    )
+}
+
+{
+    color === "off-white" && (
+    <nav class={color}>
+        <ul>
+            <li>
+                <Link 
+                    color="black"
+                    href="work"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Work"
+                />
+            </li>
+            <li>
+                <Link 
+                    color="black"
+                    href="services"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Services"
+                />
+            </li>
+            <li>
+                <a href="/">
+                    <SecondaryLogo size="small" type="acronym"/>    
+                </a>
+            </li>
+            <li>
+                <Link 
+                    color="black"
+                    href="about"
+                    size="small"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="About"
+                />
+            </li>
+
+            <li>
+                <Button 
+                    color="black"
+                    href="Contact"
+                    isUppercase={true}
+                    text="Contact Us"
+                />
+            </li>
+        </ul>
+    </nav>
+    )
+}
+
+
+
+<style>
+    .blue {
+        background-color: var(--blue);
+    }
+
+    .off-white {
+        background-color: var(--off-white);
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 40px 120px;
+    }
+
+    li {
+        list-style: none;
+        justify-self: center;
+        align-self: center;
+    }
+</style>

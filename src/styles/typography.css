@@ -1,0 +1,196 @@
+:root {
+    --small-body: 1rem;
+    --medium-body: 1.5rem;
+    --large-body: 2.5rem;
+    --h1: 10rem;
+    --h2: 5.5rem;
+    --h3: 2.5rem;
+    --h4: 2rem;
+    --h5: 1.75rem;
+}
+
+@font-face {
+    font-family: Apercu-Light;
+    src: url("../../fonts/Apercu Pro Light.otf");
+}
+
+@font-face {
+    font-family: Apercu-Regular;
+    src: url("../../fonts/Apercu Pro Regular.otf");
+}
+
+@font-face {
+    font-family: Apercu-Italic;
+    src: url("../../fonts/Apercu Pro Regular Italic.otf");
+}
+
+@font-face {
+    font-family: Apercu-Bold;
+    src: url("../../fonts/Apercu Pro Bold.otf");
+}
+
+
+@font-face {
+    font-family: Apercu-Mono;
+    src: url("../../fonts/Apercu Mono Pro.otf");
+}
+
+@font-face {
+    font-family: Baton-Regular;
+    src: url("../../fonts/Baton Regular.otf");
+}
+
+@font-face {
+    font-family: Baton-Italic;
+    src: url("../../fonts/Baton Regular Italic.otf");
+}
+
+@font-face {
+    font-family: Baton-Medium;
+    src: url("../../fonts/Baton Medium.otf");
+}
+
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+    margin: 0px;
+    font-weight: 500;
+}
+
+h1 {
+    font-family: Baton-Medium;
+    font-size: var(--h1);
+    letter-spacing: -.16px;
+}
+
+h2 {
+    font-family: Baton-Medium;
+    font-size: var(--h2);
+    line-height: 110%;
+    letter-spacing: -.16px;
+}
+
+.h2-italic {
+    font-family: Baton-Italic;
+    line-height: 90%;
+    letter-spacing: -.16px;
+}
+
+h3 {
+    font-family: Baton-Medium;
+    font-size: var(--h3);
+    line-height: 90%;
+}
+
+.h3-italic {
+    font-family: Baton-Italic;
+    line-height: 90%;
+}
+
+h4 {
+    font-family: Baton-Medium;
+    font-size: var(--h4);
+    line-height: 90%;
+}
+
+h5 {
+    font-family: Baton-Medium;
+    font-size: var(--h5);
+    line-height: 90%;
+}
+
+.small-body {
+    font-family: Apercu-Regular;
+    font-size: var(--small-body);
+    line-height: 140%;
+}
+
+.small-body-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--small-body);
+}
+
+.small-body-italic {
+    font-family: Apercu-Italic;
+    font-size: var(--small-body);
+}
+
+.small-body-uppercase-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--small-body);
+    text-transform: uppercase;
+}
+
+.small-body-mono {
+    font-family: Apercu-Mono;
+    font-size: var(--small-body);
+}
+
+.small-body-aka {
+    font-family: Apercu-Mono;
+    font-size: var(--small-body);
+    letter-spacing: 1.92px;
+}
+
+.medium-body {
+    font-family: Apercu-Regular;
+    font-size: var(--medium-body);
+    line-height: 120%;
+}
+
+.medium-body-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--medium-body);
+}
+
+.medium-body-italic {
+    font-family: Apercu-Italic;
+    font-size: var(--medium-body);
+}
+
+.medium-body-uppercase-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--medium-body);
+    text-transform: uppercase;
+}
+
+.medium-body-mono {
+    font-family: Apercu-Mono;
+    font-size: var(--medium-body);
+}
+
+.medium-body-aka {
+    font-family: Apercu-Mono;
+    font-size: var(--medium-body);
+    letter-spacing: 1.92px;
+}
+
+.large-body {
+    font-family: Apercu-Regular;
+    font-size: var(--large-body);
+    line-height: 120%;
+}
+
+.large-body-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--large-body);
+    line-height: 120%;
+}
+
+.large-body-italic {
+    font-family: Apercu-Italic;
+    font-size: var(--large-body);
+    line-height: 120%;
+}
+
+.large-body-uppercase-bold {
+    font-family: Apercu-Bold;
+    font-size: var(--large-body);
+    text-transform: uppercase;
+    line-height: 120%;
+}
+
+.large-body-mono {
+    font-family: Apercu-Mono;
+    font-size: var(--large-body);
+    line-height: 120%;
+}

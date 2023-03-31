@@ -1,0 +1,93 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+---
+
+<div class="honeycomb">
+    <div class="first-row">
+        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-left">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-right">
+        <img src="/images/hex-default.png" alt="" class="top">
+    </div>
+    
+    <div class="middle-row">
+        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-left">
+        <img src="/logos/Secondary Logo Acronym.svg" alt="" class="top">
+        <img src="/logos/Secondary Logo Expanded.svg" alt="" class="bottom-middle">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-right">
+        <img src="/images/hex-default.png" alt="" class="top">
+    </div>
+    
+    <div class="last-row">
+        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-left">
+        <img src="/images/hex-hover.svg" alt="" class="bottom-right">
+        <img src="/images/hex-default.png" alt="" class="top">
+    </div>
+</div>
+
+<style>
+    .honeycomb {
+            margin-top: -80px;
+            margin-bottom: -80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            > div {
+                display: flex;
+                flex-direction: row;
+                gap: 32px;
+                justify-content: center;
+                position: relative;
+            }
+        }
+
+    .middle-row, .last-row{
+        margin-top: -32px;
+    }
+
+
+    img {
+        width: 257px;
+        height: 290px;
+    }
+
+    .first-row, .last-row {
+        width: fit-content;
+    }
+
+    .top {
+        opacity: 1;
+        z-index: 2;
+        transition: var(--transition);
+
+        &:hover {
+            opacity: 0;
+        }
+    }
+
+    .bottom-left {
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+
+    .bottom-right {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+
+    .bottom-middle {
+        position: absolute;
+        left: 50%;
+        margin-left: -128px;
+        z-index: 1;
+    }
+
+    
+</style>

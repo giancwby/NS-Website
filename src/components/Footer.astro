@@ -1,0 +1,115 @@
+---
+//style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+//component imports
+import Link from './Link.astro';
+import Button from './Button.astro';
+import PrimaryLogo from './PrimaryLogo.astro';
+---
+
+<footer>
+    <div class="footer-leftcolumn">
+        <a href="/">
+            <PrimaryLogo color="white" size="small"/>
+        </a>
+        <p class="small-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+        </p>
+        <Button href="" color="whiteToBlack" isUppercase={true} text="Book a Meeting"/>
+    </div>
+    <div class="footer-rightcolumn">
+        <div>
+            <div>
+                <p class="medium-body">Services</p>
+                <div>
+                    <Link color="white" href="work" size="small" isUppercase={false} isNavlink={false}  text="Work"/>
+                    <Link color="white" href="services" size="small" isUppercase={false} isNavlink={false} text="Services"/>
+                </div>
+                    
+            </div>
+            <div>
+                <p class="medium-body">Company</p>
+                <div>
+                    <Link color="white" href="about" size="small" isUppercase={false} isNavlink={false} text="About"/>
+                    <Link color="white" href="careers" size="small" isUppercase={false} isNavlink={false} text="Careers"/>
+                </div>
+            </div>
+            <div>
+                <p class="medium-body">Reach Out</p>
+                <div>
+                    <Link color="white" href="mailto:inquiries@nsdesign.ph" size="small" isUppercase={false} isNavlink={false} text="inquiries@nsdesign.ph"/>
+                    <p class="small-body">+63 917 586 3211</p>
+                </div>
+            </div> 
+        </div>
+        <div class="footer-border"></div>
+        <div>
+            <p class="small-body">© Natural Selection Design</p>
+            <p class="small-body">Manila, Philippines</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--black);
+        padding: 120px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        > div:nth-child(1) {
+            justify-self: start;
+            align-self: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        > div:nth-child(2) {
+            justify-self: end;
+            align-self: start;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            > div:nth-child(1) {
+                display: flex;
+                flex-direction: row;
+                gap: 96px;
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 56px;
+
+                    > div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 32px;
+                    }
+
+                }
+            }
+
+            > div:nth-child(2) {
+                border: solid 1px var(--off-white);
+            }
+
+            > div:nth-child(3) {
+                display: flex;
+                flex-direction: row;
+
+                > p:nth-child(1) {
+                    margin-right: 190px;
+                }
+            }
+        }
+    }
+
+    p {
+        color: var(--off-white);
+    }
+</style>

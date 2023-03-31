@@ -1,0 +1,186 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+---
+
+<div>
+    <h2>01</h2>
+    <div>
+        <div class="clickable-div service">
+            <h2>Brand Identity</h2>
+            <img src="/icons/down-white-arrow.svg" alt="" id="arrow">
+        </div>
+        <div class="hidden-div hidden">
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            <p class="medium-body-mono">Experiences
+                Environment
+                Collaterals
+                Sales Materials
+                Corporate Communication</p>
+        </div>
+        <div class="border"></div>
+    </div>
+</div>
+
+<div>
+    <h2>02</h2>
+    <div>
+        <div class="clickable-div service">
+            <h2>Packaging</h2>
+            <img src="/icons/down-white-arrow.svg" alt="" id="arrow">
+        </div>
+        <div class="hidden-div hidden">
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            <p class="medium-body-mono">Experiences
+                Environment
+                Collaterals
+                Sales Materials
+                Corporate Communication</p>
+        </div>
+        <div class="border"></div>
+    </div>
+</div>
+
+<div>
+    <h2>03</h2>
+    <div>
+        <div class="clickable-div service">
+            <h2>Communications</h2>
+            <img src="/icons/down-white-arrow.svg" alt="" id="arrow">
+        </div>
+        <div class="hidden-div hidden">
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            <p class="medium-body-mono">Experiences
+                Environment
+                Collaterals
+                Sales Materials
+                Corporate Communication</p>
+        </div>
+        <div class="border"></div>
+    </div>
+</div>
+
+<div>
+    <h2>04</h2>
+    <div>
+        <div class="clickable-div service">
+            <h2>Beyond</h2>
+            <img src="/icons/down-white-arrow.svg" alt="" id="arrow">
+        </div>
+        <div class="hidden-div hidden">
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            <p class="medium-body-mono">Experiences
+                Environment
+                Collaterals
+                Sales Materials
+                Corporate Communication</p>
+        </div>
+        <div class="border"></div>
+    </div>
+</div>
+
+<style>
+
+    div {
+        display: flex;
+        gap: 180px;    
+        background-color: var(--blue);
+        color: var(--off-white);
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            width: 100%;
+    
+            > .service {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                > h2 {
+                    color: var(--off-white);
+                    transition: var(--transition);
+                }
+
+                > img {
+                    padding-top: 0px;
+                    transition: var(--transition);
+                }
+
+                &:hover {
+                    > h2 {
+                        color: var(--orange);
+                    }
+
+                    > img {
+                        padding-top: 20px;
+                    }
+                } 
+                    
+
+                > img {
+                    width: 23px;
+                }
+            }
+    
+            > .border {
+                border: solid 2px var(--off-white);
+            }
+        }
+    }
+
+    .clickable-div:hover {
+        cursor: pointer;
+    }
+
+    .hidden-div {
+        opacity: 0;
+        transition: var(--transition);
+
+        &.visible {
+            opacity: 1; 
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+        }
+    }
+
+    .hidden {
+        display: none;
+        opacity: 0;
+        transition: var(--transition);
+    }
+</style>
+
+<script>
+    // const clickableDiv = document.querySelector(".clickable-div");
+    // const hiddenDiv = document.querySelector(".hidden-div");
+
+    const clickableDivs = document.getElementsByClassName('clickable-div')
+    const hiddenDivs = document.getElementsByClassName('hidden-div')
+    const arrow = document.getElementById("arrow");
+
+    Array.from(clickableDivs).forEach((clickableDiv) => {
+        clickableDiv.addEventListener("click", function() {
+            const hiddenDiv = this.nextElementSibling;
+            if (hiddenDiv.classList.contains("visible")) {
+                hiddenDiv.classList.remove("visible");
+                hiddenDiv.classList.add("hidden");
+                arrow.setAttribute('src','/icons/down-white-arrow.svg');
+            }
+
+            else {
+                hiddenDiv.classList.remove("hidden");
+                arrow.setAttribute('src','/icons/up-white-arrow.svg');
+                setTimeout(function() {
+                    hiddenDiv.classList.add("visible");
+                }, 100);
+            }
+        }
+        ) 
+    });
+
+   
+</script>

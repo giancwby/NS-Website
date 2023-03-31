@@ -1,0 +1,37 @@
+---
+// style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Props
+interface Props {
+    type: "acronym" | "expanded";
+    size: "large" | "small"   
+}
+
+const {
+    type,
+    size
+} = Astro.props as Props;
+---
+
+{
+    type === "acronym" && (
+        <img src="/logos/Secondary Logo Acronym.svg" alt="Natural Selection Design Logo" class={size}>
+    )
+}
+
+{
+    type === "expanded" && (
+        <img src="/logos/Secondary Logo Expanded.svg" alt="Natural Selection Design Logo" class={size}>
+    )
+}   
+
+<style>
+    .large {
+        width: 162px;
+    }
+    .small {
+        width: 64px;
+    }
+</style>

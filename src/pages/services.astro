@@ -1,0 +1,88 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+//Component imports
+import Layout from '../layouts/Layout.astro';
+import PrimaryLogo from '../components/PrimaryLogo.astro';
+import CTA from '../components/CTA.astro';
+import Socials from '../components/Socials.astro';
+import Dropdown from '../components/Dropdown.astro';
+---
+
+<Layout navColor="blue" title="Services">
+    <section>
+        <div>
+            <div>
+                <PrimaryLogo color="white" size="medium" />
+                <h1>In a nutshell</h1>
+            </div>
+            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+        </div>
+    </section>
+    <section>
+        <Dropdown />
+    </section>
+    <section>
+        <div>
+            <img src="/images/contactus-hero.png" alt="">
+            <div>
+                <h2>Don't see what you're looking for?</h2>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+    </section>
+    <CTA />
+    <Socials />
+</Layout>
+
+<style>
+    section:nth-of-type(1) {
+        background-color: var(--blue);
+        padding: 80px 120px;
+        color: var(--off-white);
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            > div > h1 {
+                margin-top: -20px;
+                margin-left: -10px;
+            }
+        }
+    }
+
+    section:nth-of-type(2) {
+        padding: 80px 120px 120px 120px;
+        background-color: var(--blue);
+        display: flex;
+        flex-direction: column;
+        gap: 108px;
+    }
+
+    section:nth-of-type(3) {
+        padding: 120px 120px;
+        background-color: var(--off-white);
+        color: var(--black);
+
+        > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            > img {
+                width: 410px;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                width: 740px;
+            }
+        }
+    }
+</style>

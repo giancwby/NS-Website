@@ -1,0 +1,61 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Props
+interface Props {
+    type: "text" | "text-area" | "email";
+    placeholder:  string;
+}
+
+const {
+    type,
+    placeholder
+} = Astro.props as Props;
+---
+
+{
+    type === "text" && (
+        <input type="text" name="name" placeholder={placeholder} class="small-body-mono" required>
+    )
+}
+
+{
+    type === "email" && (
+        <input type="email" name="email" placeholder={placeholder} class="small-body-mono" required>
+    )
+}
+
+{
+    type === "text-area" && (
+        <textarea name="message" placeholder={placeholder} class="small-body-mono" required></textarea>
+    )
+}
+
+<style>
+    input, textarea {
+        padding: 24px 32px;
+        background-color: var(--off-white);
+        border: solid 2px var(--black);
+        color: var(--black);
+        width: 100%;
+        box-sizing: border-box;
+        transition: var(--transition);
+        resize: none;
+
+        &:focus-visible {
+            border: solid 2px var(--blue);
+            outline: none;
+        }
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    ::placeholder {
+        color: var(--black);
+        opacity: 1;
+    }
+</style>

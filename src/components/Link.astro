@@ -1,0 +1,105 @@
+---
+// style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Props
+interface Props {
+    href: string;
+    text: string;
+    color: "black" | "white";
+    size: "large" | "medium" | "small";
+    isUppercase: boolean;
+    isNavlink: boolean, 
+    icon?: {
+        size: "small" | "large";
+        color: "black" | "white";
+    }
+}
+
+const {
+    href,
+    text,
+    color,
+    size,
+    isUppercase = true,
+    isNavlink = true,
+    icon
+
+} = Astro.props as Props;
+---
+
+<a href={href} class:list={[color, size, {uppercase: isUppercase}, {navlink: isNavlink}]}>
+    {text} 
+    {
+        icon && icon.size === "small" && icon.color === "black" && (
+            <img src="../../public/icons/right-black-arrow.svg" alt="Right Arrow" style="width:19px">
+        )
+    } 
+
+    {
+        icon && icon.size === "small" && icon.color === "white" && (
+            <img src="../../public/icons/right-white-arrow.svg" alt="Right Arrow" style="width:19px">
+        )
+    }
+
+    {
+        icon && icon.size === "large" && icon.color === "black" && (
+            <img src="../../public/icons/right-black-arrow.svg" alt="Right Arrow" style="width:24px">
+        )
+    } 
+
+    {
+        icon && icon.size === "large" && icon.color === "white" && (
+            <img src="../../public/icons/right-white-arrow.svg" alt="Right Arrow" style="width:24px">
+        )
+    }
+</a>
+
+<style>
+    a, img {
+        transition: var(--transition);
+    }
+    .black {
+        color: var(--black);
+    }
+    .white {
+        color: var(--off-white);
+    }
+    .black:hover, .white:hover {
+        color: var(--orange);
+    }
+
+    .large {
+        font-family: Baton-Medium;
+        font-size: var(--h2);
+        line-height: 110%;
+        letter-spacing: -.5%;
+    }
+    .medium {
+        font-family: Apercu-Bold;
+        font-size: var(--medium-body);
+    }
+    .small {
+        font-family: Apercu-Regular;
+        font-size: var(--small-body);
+    }
+
+    .navlink {
+        font-family: Apercu-Bold;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+    }
+
+    a {
+        > img{
+        margin-left: 16px;
+        }   
+
+        &:hover > img {
+            margin-left: 24px;
+        }
+    }
+</style>

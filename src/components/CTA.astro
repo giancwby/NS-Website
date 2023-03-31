@@ -1,0 +1,35 @@
+---
+// Style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Component imports
+import Button from './Button.astro';
+---
+
+<section>
+    <div>
+        <div>
+            <h1>Seen Enough?</h1>
+            <h2>Let's Work Together</h2>
+        </div>
+        <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <Button color="whiteToBlack" href="" isUppercase={true} text="Book a Meeting"/>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--orange);
+        padding: 160px 120px 80px 120px;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            text-align: center;
+            color: var(--off-white);
+        }
+    }
+</style>

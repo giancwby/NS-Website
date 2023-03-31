@@ -1,0 +1,45 @@
+---
+// style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Props
+interface Props {
+    color: "black" | "white";
+    size: "large" | "medium" | "small" | "xsmall";
+}
+
+const {
+    color,
+    size
+
+} = Astro.props as Props;
+---
+
+{
+    color === "black" && (
+        <img src="/logos/Primary Logo Dark.svg" alt="Natural Selection Design Logo" class:list={[color, size]}>
+    )
+}
+
+{
+    color === "white" && (
+        <img src="/logos/Primary Logo Light.svg" alt="Natural Selection Design Logo" class:list={[color, size]}>
+    )
+}
+
+
+<style>
+    .large {
+        width: 931px;
+    }
+    .medium {
+        width: 650px;
+    }
+    .small {
+        width: 270px;
+    }
+    .xsmall {
+        width: 235px;
+    }
+</style>

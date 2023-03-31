@@ -1,0 +1,103 @@
+---
+// Component Imports
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+import Socials from '../components/Socials.astro';
+import Hero from '../components/Hero.astro';
+import Link from '../components/Link.astro';
+
+// Style Imports
+import '../styles/global.css';
+import '../styles/typography.css';
+---
+
+<Layout title="Natural Selection Design" navColor="blue">
+	<main>
+		<Hero />
+		<section>
+			<img src="../../images/home-hero.png" alt="">
+			<h2>
+				We're a small studio dedicated to our work & our clients
+			</h2>
+			<p class="medium-body">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+			</p>
+			<div>
+				<h3>
+					Brands We've Worked With
+				</h3>
+				<div class="medium-body">
+					<div>
+						<p>Lorem ipsum</p>
+						<div></div>
+						<p>Consectetur Adipis</p>
+						<div></div>
+						<p>Sed do eiu</p>
+					</div>
+
+					<div>
+						<p>Sed do eiu</p>
+						<div></div>
+						<p>Consectetur Adipis</p>
+						<div></div>
+						<p>Lorem ipsum</p>
+					</div>
+
+					<div>
+						<p>Sed do eiu</p>
+						<div></div>
+						<p>Voluptatem accu</p>
+						<div></div>
+						<p>Doloremque</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<CTA />
+		<Socials />
+	</main>
+</Layout>
+
+<style>
+	section {
+		background-color: var(--blue);
+		padding: 80px 120px 120px 120px;
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+		align-items: center;
+		justify-items: center;
+		text-align: center;
+		color: var(--off-white);
+
+		> img {
+			width: 758px;
+		}
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			width: 100%;
+			margin-top: 24px;
+
+			> div {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 40px;
+
+				> div{
+					display: flex;
+					flex-direction: column;
+					gap: 8px;
+					text-align: left;
+
+					div{
+						border: solid 1px var(--off-white);
+					}
+				}
+			}
+		}
+	}
+</style>

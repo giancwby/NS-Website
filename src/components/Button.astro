@@ -1,0 +1,74 @@
+---
+// style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+// Props
+interface Props {
+    href: string;
+    text: string;
+    color: "black" | "whiteToBlue" | "whiteToBlack";
+    isUppercase: boolean;
+}
+
+const {
+    href,
+    text,
+    color,
+    isUppercase
+
+} = Astro.props as Props;
+---
+
+<a href={href} class:list={["button", color, {uppercase: isUppercase}]}>{text}</a>
+
+<style>
+    a {
+        padding: 14px 24px;
+        font-family: Apercu-Bold;
+        font-size: var(--small-body);
+        border-radius: 8px;
+        width: fit-content;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+    }
+
+    .black {
+        color: var(--black);
+        background-color: transparent;
+        border: solid 2px var(--black);
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--black);
+            color: var(--off-white);
+        }
+    }
+
+    .whiteToBlue {
+        color: var(--off-white);
+        background-color: transparent;
+        border: solid 2px var(--off-white);
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--off-white);
+            color: var(--blue);
+        }
+    }
+
+    .whiteToBlack {
+        color: var(--off-white);
+        background-color: transparent;
+        border: solid 2px var(--off-white);
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--off-white);
+            color: var(--black);
+        }
+    }
+
+</style>
