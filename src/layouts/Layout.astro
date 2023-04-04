@@ -2,6 +2,7 @@
 //component imports
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Preloader from '../components/preloader.astro';
 
 // Props
 interface Props {
@@ -24,6 +25,7 @@ const {
 		<title>{title}</title>
 	</head>
 	<body>
+		<Preloader />
 		<Nav color={navColor}/>
 		<slot />
 		<Footer />
