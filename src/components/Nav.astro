@@ -20,7 +20,7 @@ const {
 
 {
     color === "blue" && (
-    <nav class={color}>
+    <nav class="navbar blue">
         <ul>
             <li>
                 <Link 
@@ -72,7 +72,7 @@ const {
 
 {
     color === "off-white" && (
-    <nav class={color}>
+    <nav class="navbar off-white">
         <ul>
             <li>
                 <Link 
@@ -123,7 +123,20 @@ const {
     )
 }
 
-
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        // User is scrolling up
+        document.querySelector(".navbar").classList.remove("hide-navbar");
+    } else {
+        // User is scrolling down
+        document.querySelector(".navbar").classList.add("hide-navbar");
+    }
+    prevScrollpos = currentScrollPos;
+}
+</script>
 
 <style>
     .blue {
@@ -137,7 +150,7 @@ const {
     ul {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        padding: 40px 120px;
+        padding: 24px 120px;
     }
 
     li {
@@ -145,4 +158,25 @@ const {
         justify-self: center;
         align-self: center;
     }
+
+    li:nth-of-type(1) {
+        justify-self: start;
+    }
+
+    li:nth-of-type(5) {
+        justify-self: end;
+    }
+
+    .navbar {
+        transition: var(--transition);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .hide-navbar {
+        transform: translateY(-100%);
+    }
 </style>
+
