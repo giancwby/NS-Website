@@ -35,4 +35,26 @@ import Button from './Button.astro';
 			margin: auto;
         }
     }
+
+    @media (width <= 430px) {
+        section {
+            > div {
+                padding: 56px 24px;
+                gap : 40px;
+
+                > div {
+                    > h1 {
+                        font-size: var(--h3);
+                    }
+                    > h2 {
+                        font-size: var(--h4);
+                    }
+                }
+
+                > p {
+                    font-size: var(--small-body) !important;
+                }
+            }
+        }
+    }
 </style>

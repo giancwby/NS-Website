@@ -34,6 +34,7 @@ import '../styles/typography.css';
 							<p>Consectetur Adipis</p>
 							<div></div>
 							<p>Sed do eiu</p>
+							<div></div>
 						</div>
 	
 						<div>
@@ -42,6 +43,7 @@ import '../styles/typography.css';
 							<p>Consectetur Adipis</p>
 							<div></div>
 							<p>Lorem ipsum</p>
+							<div></div>
 						</div>
 	
 						<div>
@@ -79,7 +81,7 @@ import '../styles/typography.css';
 			margin: auto;
 
 			> img {
-				width: 758px;
+				max-width: 100%;
 			}
 	
 			> div {
@@ -100,13 +102,51 @@ import '../styles/typography.css';
 						gap: 8px;
 						text-align: left;
 	
-						div{
+						> div{
 							border: solid 1px var(--off-white);
+						}
+
+						> div:nth-of-type(3) {
+							display: none;
 						}
 					}
 				}
 			}
 		}
-		
+	}
+
+	@media (width <= 430px) {
+		section {
+			> div {
+				padding: 16px 24px 32px 24px;
+
+				> h2 {
+					font-size: var(--h3);
+				}
+
+				> p {
+					font-size: var(--small-body) !important;
+					line-height: 140% !important;
+				}
+
+				> div {
+					> div {
+						grid-template-columns: repeat(1, 1fr);
+						gap: 8px;
+
+						> div {
+							> p {
+								font-size: var(--small-body);
+								text-align:center;
+							}
+							
+							> div:nth-of-type(3) {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 </style>

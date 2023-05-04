@@ -120,4 +120,46 @@ import PrimaryLogo from './PrimaryLogo.astro';
     p {
         color: var(--off-white);
     }
+
+    @media (width <= 430px) {
+        footer {
+            > div {
+                padding: 40px 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+
+                > div:nth-child(1) {
+                    gap: 24px;
+                }    
+                
+                > div:nth-child(2) {
+                    gap: 32px;
+                    width: 100%;
+
+                    > div:nth-child(1) {
+                        gap: 40px;
+                        flex-direction: column;
+
+                        > div {
+                            gap: 16px;
+
+                            > div {
+                                gap: 8px;
+                            }
+                        }
+                    }
+                    
+                    > div:nth-child(3) {
+                        flex-direction: column;
+                        gap: 8px;
+
+                        > p:nth-child(1) {
+                            margin-right: 0px;
+                        }
+                    }
+                }   
+            }
+        }
+    }
 </style>

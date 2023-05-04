@@ -31,4 +31,20 @@ import '../styles/typography.css';
 			margin: auto;
         }
     }
+
+    @media (width <= 430px) {
+        section {
+            > div {
+                padding: 56px 24px;
+                
+                > h2 {
+                    font-size: var(--h3);
+                }
+
+                > p {
+                    font-size: var(--small-body) !important;
+                }
+            }
+        }
+    }
 </style>
