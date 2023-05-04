@@ -5,6 +5,8 @@
     --black: black;
 
     --transition: all ease-in 0.15s;
+
+    --max-width: 1440px;
     }
 
 body, ul, p {

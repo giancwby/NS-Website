@@ -26,14 +26,29 @@ import Layout from '../layouts/Layout.astro';
     section:nth-of-type(1) {
         background-color: var(--off-white);
         color: var(--black);
-        padding: 160px 120px 48px 120px;
-
+        
         > div {
+            padding: 160px 120px 48px 120px;
+
+            max-width: var(--max-width);
+			margin: auto;
+
             display: flex;
             flex-direction: column;
             gap: 40px;
             align-items: center;
             text-align: center;
+
+            > div {
+                > h2 {
+                    margin-bottom: -24px;
+                }
+            }
+
+            > img {
+                margin-top: 24px;
+            }
         }
+
     }
 </style>

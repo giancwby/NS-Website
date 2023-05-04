@@ -139,6 +139,7 @@ const {
 </script>
 
 <style>
+
     .blue {
         background-color: var(--blue);
     }
@@ -151,6 +152,8 @@ const {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         padding: 24px 120px;
+        max-width: var(--max-width);
+        margin: auto;
     }
 
     li {
@@ -171,8 +174,9 @@ const {
         transition: var(--transition);
         position: fixed;
         top: 0;
-        left: 0;
+        left: 25;
         width: 100%;
+        z-index: 999;
     }
 
     .hide-navbar {

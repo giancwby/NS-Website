@@ -13,30 +13,36 @@ import Hex from '../components/Hex.astro';
 <Layout navColor="blue" title="About">
     <Hero />
     <section class="teamImages">
-        <img src="/images/team-commonarea.webp" alt="NS Design Team in Studio Common Area">
         <div>
-            <h2>People and Brands</h2>
-            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            <img src="/images/team-commonarea.webp" alt="NS Design Team in Studio Common Area">
+            <div>
+                <h2>People and Brands</h2>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+            </div>
+            <img src="/images/team-courtyard.webp" alt="NS Design Team in Studio Courtyard">
         </div>
-        <img src="/images/team-courtyard.webp" alt="NS Design Team in Studio Courtyard">
     </section>
     <section class="targetMarket">
         <div>
-            <h2>We're always for the Philippines, but we like to think we're also for the world</h2>
-            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+            <div>
+                <h2>We're always for the Philippines, but we like to think we're also for the world</h2>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+            </div>
         </div>
     </section>
     <section class="ourTeam">
         <div>
-            <h2>Our Team</h2>
-            <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-        </div>
-        <div class="honeycomb">
-            <Hex />
-        </div>
-        <div class="former-members">
-            <h3>Former Members</h3>
-            <p class="small-body">Mica Bautista, Liam Cura, Christine Dy, Ken Logro, Chelsea Madamba, Monica Magsanoc</p>
+            <div>
+                <h2>Our Team</h2>
+                <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="honeycomb">
+                <Hex />
+            </div>
+            <div class="former-members">
+                <h3>Former Members</h3>
+                <p class="small-body">Mica Bautista, Liam Cura, Christine Dy, Ken Logro, Chelsea Madamba, Monica Magsanoc</p>
+            </div>
         </div>
     </section>
     <section class="community">
@@ -57,73 +63,92 @@ import Hex from '../components/Hex.astro';
 
 <style>
     .teamImages {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 80px 120px 120px 120px;
-        gap: 160px;
         background-color: var(--blue);
-
-        > img {
-            width: 100%;
-        }
-
+        
         > div {
-        color: var(--off-white);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 120px 120px 120px;
+            gap: 160px;
+
+            max-width: var(--max-width);
+            margin: auto;
+
+            > img {
+                max-width: 800px;
+            }
+    
+            > div {
+            color: var(--off-white);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            }
         }
     }
 
     .targetMarket {
-        padding: 120px 120px 60px 120px;
         background-color: var(--off-white);
+        padding: 120px 120px 60px 120px;
 
         > div {
-        border: solid 2px var(--black);
-        padding: 64px 80px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        color: var(--black);
-        text-align: center;
+            max-width: var(--max-width);
+            margin: auto;
+
+            > div {
+            border: solid 2px var(--black);
+            padding: 64px 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            color: var(--black);
+            text-align: center;
+        }
+
         }   
     }
 
     .ourTeam {
-        padding: 60px 120px 120px 120px;
         background-color: var(--off-white);
+        
+        > div {
+            padding: 60px 120px 120px 120px;
 
-        > div:nth-child(1) {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            text-align: left;
+            max-width: var(--max-width);
+            margin: auto;
 
-            > p {
-                width: 250px;
-            }
-
-        }
-
-        > .honeycomb {
-            margin-top: -80px;
-            margin-bottom: -80px;
-        }
-
-        > .former-members {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 16px;
-            text-align: right;
-
+            > div:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                text-align: left;
+    
                 > p {
-                width: 270px;
+                    width: 250px;
+                }
+    
+            }
+    
+            > .honeycomb {
+                margin-top: -80px;
+                margin-bottom: -80px;
+            }
+    
+            > .former-members {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 16px;
+                text-align: right;
+    
+                    > p {
+                    width: 270px;
+                }
             }
         }
+
     }
 
     .community {
@@ -136,6 +161,9 @@ import Hex from '../components/Hex.astro';
             text-align: left;
             color: var(--off-white);
             gap: 80px;
+
+            max-width: var(--max-width);
+            margin: auto;
 
             > div:nth-child(1) {
                 display: flex;

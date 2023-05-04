@@ -7,29 +7,37 @@ import '../styles/typography.css';
 import PrimaryLogo from './PrimaryLogo.astro';
 ---
 
-<section class="hero">
-    <PrimaryLogo color="white" size="large"/>
-    <p class="medium-body-aka">a.k.a.</p>
-    <h2 class="h2-italic">
-        Natural Selection Design
-    </h2>
-    <p class="medium-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
-    </p>
-    <img src="../../icons/down-white-arrow.svg" alt="">
+<section>
+	<div>
+		<PrimaryLogo color="white" size="large"/>
+		<p class="medium-body-aka">a.k.a.</p>
+		<h2 class="h2-italic">
+			Natural Selection Design
+		</h2>
+		<p class="medium-body">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+		</p>
+		<img src="../../icons/down-white-arrow.svg" alt="">
+	</div>
 </section>
 
 <style>
-    .hero {
+    section {
 		background-color: var(--blue);
-		padding: 180px 120px 40px 120px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-items: center;
-		gap: 48px;
-		text-align: center;
-		color: var(--off-white);
+		
+		> div {
+			padding: 180px 120px 40px 120px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-items: center;
+			gap: 48px;
+			text-align: center;
+			color: var(--off-white);
+
+			max-width: var(--max-width);
+			margin: auto;
+		}
 
 		> img {
 			width: 13px;
