@@ -10,49 +10,54 @@ import Input from '../components/Input.astro';
 ---
 
 <Layout navColor="blue" title="Contact Us">
-    <section>
-        <div>
+    <main>
+        <section>
             <div>
-                <h2>Reach Out and Join Our Community</h2>
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
-            </div>
-            <img src="/images/contactus-hero.png" alt="">
-        </div>
-    </section>
-    <section>
-        <div>
-            <div>
-                <h1>Want to Meet?</h1>
-                <h2>Schedule a Meeting</h2>
-            </div>
-            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            <Button color="black" href="" isUppercase={true} text="Book a Meeting"/>
-        </div>
-    </section>
-    <section>
-        <div>
-            <h2>Drop Us a Message</h2>
-            <form target="_blank" action="https://formsubmit.co/gian@nsdesign.ph" method="POST">
                 <div>
+                    <h2>Reach Out and Join Our Community</h2>
                     <div>
-                        <Input type="text" placeholder="Name"/>
-                        <Input type="email" placeholder="Email"/>
+                        <a href="mailto:inquiries@nsdesign.ph" class="medium-body">inquiries@nsdesign.ph</a>
+                        <p class="medium-body">+63 917 586 3211</p>
                     </div>
-                    <Input type="text-area" placeholder="What's on your mind?"/>
-                    <button type="submit">Send</button>
                 </div>
-            </form>
-        </div>
-    </section>
-    <section>
-        <div>
-            <div>
-                <h2>Prefer to Meet in Person? <br> Let's have coffee.</h2>
-                <p class="large-body">We’re stationed in Studio Kapitbahay. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <img src="/images/contactus-hero.png" alt="">
             </div>
-            <img src="/images/contactus-end.png" alt="">
-        </div>
-    </section>
+        </section>
+        <section>
+            <div>
+                <div>
+                    <h1>Want to Meet?</h1>
+                    <h2>Schedule a Meeting</h2>
+                </div>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <Button color="black" href="" isUppercase={true} text="Book a Meeting"/>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2>Drop Us a Message</h2>
+                <form target="_blank" action="https://formsubmit.co/gian@nsdesign.ph" method="POST">
+                    <div>
+                        <div>
+                            <Input type="text" placeholder="Name"/>
+                            <Input type="email" placeholder="Email"/>
+                        </div>
+                        <Input type="text-area" placeholder="What's on your mind?"/>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div>
+                <div>
+                    <h2>Prefer to Meet in Person? <br> Let's have coffee.</h2>
+                    <p class="large-body">We’re stationed in Studio Kapitbahay. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+                <img src="/images/contactus-end.png" alt="">
+            </div>
+        </section>
+    </main>
 </Layout>
 
 <style>
@@ -72,6 +77,16 @@ import Input from '../components/Input.astro';
                 display: flex;
                 flex-direction: column;
                 gap: 80px;
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+
+                    > a {
+                        color: var(--off-white);
+                    }
+                }
             }
 
             > img {
@@ -112,6 +127,7 @@ import Input from '../components/Input.astro';
     }
 
     section:nth-of-type(3) {
+        display: none;
         > div {
             display: flex;
             flex-direction: column;
@@ -166,6 +182,66 @@ import Input from '../components/Input.astro';
         &:hover {
             background-color: var(--black);
             color: var(--off-white);
+        }
+    }
+
+    @media (width <= 430px) {
+        main {
+            > section:nth-child(1) {
+                padding: 160px 24px 32px 24px;
+                > div {
+                    flex-direction: column;
+                    gap: 40px;
+
+                    > div {
+                        gap: 40px;
+                        > h2 {
+                            font-size: var(--h3);
+                        }
+                    }
+                    > img {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            > section:nth-child(2) {
+                padding: 32px 24px;
+                > div {
+                    gap: 24px;
+                    > div {
+                        > h1 {
+                            font-size: var(--h3);
+                        }
+                        > h2 {
+                            font-size: var(--h4);
+                        }
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+            }
+
+            > section:nth-child(4) {
+                padding: 32px 24px;
+                > div {
+                    gap: 32px;
+                    > div {
+                        gap: 16px;
+
+                        > h2 {
+                            font-size: var(--h4);
+                        }
+                        > p {
+                            font-size: var(--small-body);
+                        }
+                    }
+                    > img {
+                        max-width: 100%;
+                    }
+                }
+            }
         }
     }
 </style>

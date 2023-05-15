@@ -6,26 +6,26 @@ import '../styles/typography.css';
 
 <div class="honeycomb">
     <div class="first-row">
-        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-default.png" alt="" class="top right">
         <img src="/images/hex-hover.svg" alt="" class="bottom-left">
         <img src="/images/hex-hover.svg" alt="" class="bottom-right">
         <img src="/images/hex-default.png" alt="" class="top">
     </div>
     
     <div class="middle-row">
-        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-default.png" alt="" class="top right">
         <img src="/images/hex-hover.svg" alt="" class="bottom-left">
         <img src="/logos/Secondary Logo Acronym.svg" alt="" class="top">
         <img src="/logos/Secondary Logo Expanded.svg" alt="" class="bottom-middle">
         <img src="/images/hex-hover.svg" alt="" class="bottom-right">
-        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-default.png" alt="" class="top right">
     </div>
     
     <div class="last-row">
         <img src="/images/hex-default.png" alt="" class="top">
         <img src="/images/hex-hover.svg" alt="" class="bottom-left">
         <img src="/images/hex-hover.svg" alt="" class="bottom-right">
-        <img src="/images/hex-default.png" alt="" class="top">
+        <img src="/images/hex-default.png" alt="" class="top right">
     </div>
 </div>
 
@@ -89,5 +89,71 @@ import '../styles/typography.css';
         z-index: 1;
     }
 
-    
+    @media (width <= 430px) {
+        .honeycomb {
+            margin: 0px;
+
+            > div {
+                flex-direction: column;
+                width: 100%;
+                gap: 0px;
+            }
+
+            > div:nth-child(1) {
+                > img:nth-child(1) {
+                    align-self: flex-end;
+                }
+                > img:nth-child(2) {
+                    top: 0;
+                    right: 0;
+                    left: initial !important;
+                }
+                > img:nth-child(3) {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            > div:nth-child(2) {
+                > img:nth-child(1) {
+                    align-self: flex-end;
+                }
+                > img:nth-child(2) {
+                    top: 0;
+                    right: 0;
+                    left: initial !important;
+                }
+                > img:nth-child(4) {
+                    left: 0;
+                    margin: 0px;
+                }
+                > img:nth-child(5) {
+                    bottom: 0;
+                    right: 0;
+                }
+                > img:nth-child(6) {
+                    align-self: flex-end;
+                }
+            }
+
+            > div:nth-child(3) {
+                > img:nth-child(2) {
+                    top: 0;
+                    left: 0;
+                }
+                > img:nth-child(3) {
+                    bottom: 0;
+                    right: 0;
+                }
+                > img:nth-child(4) {
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        .middle-row, .last-row{
+            margin-top: 0px;
+        }
+
+    }
 </style>

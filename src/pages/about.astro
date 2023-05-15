@@ -11,54 +11,56 @@ import Hex from '../components/Hex.astro';
 ---
 
 <Layout navColor="blue" title="About">
-    <Hero />
-    <section class="teamImages">
-        <div>
-            <img src="/images/team-commonarea.webp" alt="NS Design Team in Studio Common Area">
+    <main>
+        <Hero />
+        <section class="teamImages">
             <div>
-                <h2>People and Brands</h2>
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+                <img src="/images/team-commonarea.webp" alt="NS Design Team in Studio Common Area">
+                <div>
+                    <h2>People and Brands</h2>
+                    <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+                </div>
+                <img src="/images/team-courtyard.webp" alt="NS Design Team in Studio Courtyard">
             </div>
-            <img src="/images/team-courtyard.webp" alt="NS Design Team in Studio Courtyard">
-        </div>
-    </section>
-    <section class="targetMarket">
-        <div>
+        </section>
+        <section class="targetMarket">
             <div>
-                <h2>We're always for the Philippines, but we like to think we're also for the world</h2>
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <div>
+                    <h2>We're always for the Philippines, but we like to think we're also for the world</h2>
+                    <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="ourTeam">
-        <div>
+        </section>
+        <section class="ourTeam">
             <div>
-                <h2>Our Team</h2>
-                <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                <div>
+                    <h2>Our Team</h2>
+                    <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="honeycomb">
+                    <Hex />
+                </div>
+                <div class="former-members">
+                    <h3>Former Members</h3>
+                    <p class="small-body">Mica Bautista, Liam Cura, Christine Dy, Ken Logro, Chelsea Madamba, Monica Magsanoc</p>
+                </div>
             </div>
-            <div class="honeycomb">
-                <Hex />
-            </div>
-            <div class="former-members">
-                <h3>Former Members</h3>
-                <p class="small-body">Mica Bautista, Liam Cura, Christine Dy, Ken Logro, Chelsea Madamba, Monica Magsanoc</p>
-            </div>
-        </div>
-    </section>
-    <section class="community">
-        <div>
+        </section>
+        <section class="community">
             <div>
-                <h2>Embedded in Community</h2>
-                <img src="/images/studioKapitbahay.webp" alt="">
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                <div>
+                    <h2>Embedded in Community</h2>
+                    <img src="/images/studioKapitbahay.webp" alt="">
+                    <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div>
+                    <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <img src="/images/pta.webp" alt="">
+                </div>
             </div>
-            <div>
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                <img src="/images/pta.webp" alt="">
-            </div>
-        </div>
-    </section>
-    <Socials />
+        </section>
+        <Socials />
+    </main>
 </Layout>
 
 <style>
@@ -183,6 +185,115 @@ import Hex from '../components/Hex.astro';
 
                 > img {
                     width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (width <= 430px) {
+        section:nth-of-type(2) {
+            > div {
+                padding: 16px 24px 32px 24px;
+                gap: 32px;
+
+                > img {
+                    max-width: 100%;
+                }
+
+                > div {
+                    gap: 32px;
+
+                    > h2 {
+                        font-size: var(--h3);
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+
+
+            }
+        }
+
+        section:nth-of-type(3) {
+            padding: 32px 24px;
+
+            > div {
+                > div {
+                    padding: 32px;
+                    gap: 24px;
+
+                    > h2 {
+                        font-size: var(--h4);
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+            }
+        }
+
+        section:nth-of-type(4) {
+            padding: 24px 24px 40px 24px;
+
+            > div {
+                padding: 0;
+
+                > div:nth-of-type(1) {
+                    gap: 16px;
+                    margin-bottom: 32px;
+
+                    > h2 {
+                        font-size: var(--h4);
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+                > div:nth-of-type(2) {
+                    margin: 0px;
+                    margin-bottom: 32px;
+                }
+                > div:nth-of-type(3) {
+                    > h3 {
+                        font-size: var(--h4);
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+            }
+        }
+
+        section:nth-of-type(5) {
+            padding: 40px 24px;
+
+            > div {
+                gap: 56px;
+                flex-direction: column;
+                
+                > div:nth-child(1) {
+                    gap: 32px;
+
+                    > h2 {
+                        font-size: var(--h3);
+                    }
+                    > img {
+                        max-width: 100%;
+                    }
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
+
+                > div:nth-child(2) {
+                    
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                    > img {
+                        max-width: 100%;
+                    }
                 }
             }
         }

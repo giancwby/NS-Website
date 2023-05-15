@@ -62,7 +62,7 @@ import '../styles/typography.css';
 </div>
 
 <div>
-    <h2>04</h2>
+    <h2 class="number">04</h2>
     <div>
         <div class="clickable-div service">
             <h2>Beyond</h2>
@@ -127,6 +127,39 @@ import '../styles/typography.css';
     
             > .border {
                 border: solid 2px var(--off-white);
+            }
+        }
+    }
+    
+    @media (width <= 430px) {
+        div {
+            gap: 24px;
+
+            > h2 {
+                font-size: var(--h5);
+            }
+
+            > div {
+                gap: 16px !important;
+
+                > .service {
+                    > h2 {
+                        font-size: var(--h5);
+                    }
+
+                    > img {
+                        width: 12px;
+                    }
+                }
+
+                > .hidden-div {
+                    flex-direction: column !important;
+                    margin-bottom: 16px;
+
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
             }
         }
     }

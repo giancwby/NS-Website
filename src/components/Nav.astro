@@ -65,7 +65,7 @@ const {
                     text="Contact Us"
                 />
             </li>
-            <li class="hamburger">
+            <li class="hamburger-blue" id="hamburgerBlue">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -123,6 +123,11 @@ const {
                     text="Contact Us"
                 />
             </li>
+            <li class="hamburger-offWhite" id="hamburgerWhite">
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>   
         </ul>
     </nav>
     )
@@ -144,19 +149,6 @@ const {
 </script>
 
 <style>
-
-    .blue {
-        background-color: var(--blue);
-
-        > .hamburger {
-            background-color: var(--off-white);
-        }
-    }
-
-    .off-white {
-        background-color: var(--off-white);
-    }
-
     ul {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -166,7 +158,6 @@ const {
     }
 
     li {
-        list-style: none;
         justify-self: center;
         align-self: center;
     }
@@ -185,9 +176,22 @@ const {
         > div {
             width: 55px;
             height: 4px;
-            background-color: var(--off-white);
             transition: var(--transition);
 
+        }
+    }
+
+    
+    .hamburger-blue {
+        > div {
+            background-color: var(--off-white);
+        }
+    }
+
+
+    .hamburger-offWhite {
+        > div {
+            background-color: var(--black);
         }
     }
 
@@ -197,14 +201,22 @@ const {
         top: 0;
         left: 25;
         width: 100%;
-        z-index: 9;
+        z-index: 99;
+    }
+
+    .blue {
+        background-color: var(--blue);
+    }
+
+    .off-white {
+        background-color: var(--off-white);
     }
 
     .hide-navbar {
         transform: translateY(-100%);
     }
 
-    @media (max-width: 430px) {
+    @media (width <= 430px) {
         nav {
 
             > ul {
@@ -229,4 +241,3 @@ const {
         }
     }
 </style>
-

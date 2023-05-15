@@ -3,6 +3,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Preloader from '../components/preloader.astro';
+import MobileNav from '../components/MobileNav.astro';
 
 // Props
 interface Props {
@@ -26,9 +27,28 @@ const {
 	</head>
 	<body>
 		<Preloader />
+		<MobileNav />
 		<Nav color={navColor}/>
 		<slot />
 		<Footer />
 	</body>
 </html>
+
+
+<script>
+	const closeImg = document.getElementById('close');
+	const hamburgerImgBlue = document.getElementById('hamburgerBlue')
+
+	closeImg.addEventListener('click', function() {
+		const mobileNav = document.getElementById('MobileNav');
+		mobileNav.style.left = '450px';
+		mobileNav.style.opacity = '0';
+	});
+
+	hamburgerImgBlue.addEventListener('click', function () {
+		const mobileNav = document.getElementById('MobileNav');
+		mobileNav.style.left = '0px';
+		mobileNav.style.opacity = '1';
+	});
+</script>
 

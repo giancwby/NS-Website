@@ -12,31 +12,33 @@ import Dropdown from '../components/Dropdown.astro';
 ---
 
 <Layout navColor="blue" title="Services">
-    <section>
-        <div>
+    <main>
+        <section>
             <div>
-                <PrimaryLogo color="white" size="medium" />
-                <h1>In a nutshell</h1>
+                <div>
+                    <PrimaryLogo color="white" size="medium" />
+                    <h1>In a nutshell</h1>
+                </div>
+                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
             </div>
-            <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-        </div>
-    </section>
-    <section>
-        <div>
-            <Dropdown />
-        </div>
-    </section>
-    <section>
-        <div>
-            <img src="/images/contactus-hero.png" alt="">
+        </section>
+        <section>
             <div>
-                <h2>Don't see what you're looking for?</h2>
-                <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <Dropdown />
             </div>
-        </div>
-    </section>
-    <CTA />
-    <Socials />
+        </section>
+        <section>
+            <div>
+                <img src="/images/contactus-hero.png" alt="">
+                <div>
+                    <h2>Don't see what you're looking for?</h2>
+                    <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+            </div>
+        </section>
+        <CTA />
+        <Socials />
+    </main>
 </Layout>
 
 <style>
@@ -95,6 +97,60 @@ import Dropdown from '../components/Dropdown.astro';
                 flex-direction: column;
                 gap: 40px;
                 width: 740px;
+            }
+        }
+    }
+
+    @media (width <= 430px) {
+        section:nth-of-type(1) {
+            padding: 136px 24px 32px 24px; 
+
+            > div {
+                gap: 40px;
+
+                > div {
+                    > h1 {
+                        font-size: var(--h3);
+                        margin: 0;
+                    }
+                }
+
+                > p {
+                    font-size: var(--small-body);
+                }
+            }
+        }
+
+        section:nth-of-type(2) {
+            > div {
+                padding: 16px 24px 40px 24px; 
+                gap: 24px;
+            }
+        }
+
+        section:nth-of-type(3) {
+            padding: 48px 16px; 
+            
+            > div {
+                gap: 16px;
+                flex-direction: column;
+
+                > img {
+                    max-width: 90%;
+                }
+
+                > div {
+                    gap: 16px;
+                    width: auto;
+
+                    > h2 {
+                        font-size: var(--h3);
+                    }
+
+                    > p {
+                        font-size: var(--small-body);
+                    }
+                }
             }
         }
     }

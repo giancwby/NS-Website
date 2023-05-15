@@ -1,0 +1,108 @@
+---
+//style imports
+import '../styles/global.css';
+import '../styles/typography.css';
+
+//component imports
+import Link from './Link.astro';
+import Button from './Button.astro';
+import SecondaryLogo from './SecondaryLogo.astro';
+---
+
+
+<section id="MobileNav">
+    <div>
+        <div>
+            <a href="/">
+                <SecondaryLogo size="small" type="acronym"/>
+            </a>
+            <img src="/icons/x-white.svg" alt="Close Icon" id="close">
+        </div>
+        <ul>
+            <li>
+                <Link 
+                    color="white"
+                    href="/work/"
+                    size="medium"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Work"
+                />
+            </li>
+            <li>
+                <Link 
+                    color="white"
+                    href="/services/"
+                    size="medium"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="Services"
+                />
+            </li>
+            <li>
+                <Link 
+                    color="white"
+                    href="/about/"
+                    size="medium"
+                    isUppercase={true}
+                    isNavlink={true}
+                    text="About"
+                />    
+            </li>
+        </ul>
+        <div>
+            <Button 
+                color="whiteToBlue"
+                href="/contact/"
+                isUppercase={true}
+                text="Contact Us"
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 450px;
+        width: 100%;
+        z-index: 100;
+        background-color: var(--blue);
+        height: 100vh;
+        opacity: 0;
+        transition: all ease-in-out .3s;
+
+        > div {
+            padding: 2.5rem;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            > div:nth-of-type(1) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+    
+                > img {
+                    width: 25px;
+                }
+            }
+    
+            > ul {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+    }
+
+    @media (width <= 431px) {
+        section {
+            display: initial;
+        }
+    }
+</style>
+
