@@ -105,15 +105,22 @@ import Input from '../components/Input.astro';
             align-items: center;
 
             max-width: var(--max-width);
-			margin: auto;    
+			margin: auto;
+
+            > h1 {
+                @media (width <= 1280px) {
+                    font-size: var(--h3);;
+                }
+            }
 
             > p {
                 @media (width >= 1280px) {
                     width: 800px;
                 }
             }
-        }
+        } 
     }
+    
 
     section:nth-of-type(3), section:nth-of-type(4) {
         background-color: var(--off-white);
@@ -201,7 +208,8 @@ import Input from '../components/Input.astro';
                     > div {
                         gap: 40px;
                         > h2 {
-                            font-size: var(--h3);
+                            font-size: 4rem;
+                            line-height: 100%;
                         }
                     }
                     > img {
@@ -211,7 +219,7 @@ import Input from '../components/Input.astro';
             }
 
             > section:nth-child(2) {
-                padding: 32px 24px;
+                padding: 64px 24px 32px 24px;
                 > div {
                     gap: 24px;
                     > div {
