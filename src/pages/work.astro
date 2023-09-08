@@ -7,13 +7,11 @@ import '../styles/typography.css';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout navColor="blue" title="Work">
+<Layout navColor="off-white" title="Work">
     <main>
-        <section>
+        <section class="hero">
             <div>
-                <div>
-                    <h2>These brands were eager to tell their story</h2>
-                </div>
+                <h1>These brands were eager to tell their story</h1>
                 <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laud   antium.</p>
                 <img src="../../icons/down-black-arrow.svg" alt="">
             </div>
@@ -22,46 +20,46 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-    section:nth-of-type(1) {
+    .hero {
         background-color: var(--off-white);
         color: var(--black);
-        
+
         > div {
-            padding: 160px 120px 48px 120px;
-
-            max-width: var(--max-width);
-			margin: auto;
-
+            padding: 180px 24px 32px 24px;
+            gap: 24px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
             align-items: center;
             text-align: center;
+            
+            @media (width >= 1280px) {
+                padding: 160px 120px 48px 120px;
+                max-width: var(--max-width);
+                margin: auto;
+                gap: 40px;
 
-            > div {
+            }
+
+            > h1 {
+                font-size: var(--h3);
+
+                @media (width >= 1280px) {
+                    font-size: var(--h1);
+                }
+            }
+            
+            > p {
+                font-size: var(--small-body);
+
+                @media (width >= 1280px) {
+                    font-size: var(--medium-body);
+                }
             }
 
             > img {
-                margin-top: 24px;
-            }
-        }
 
-    }
-
-    @media (width <= 430px) {
-        section:nth-of-type(1) {
-            > div {
-                padding: 180px 24px 32px 24px;
-                gap: 24px;
-
-                > div {
-                    > h2 {
-                        font-size: var(--h3);
-                    }
-                }
-
-                > p {
-                    font-size: var(--small-body);
+                @media (width >= 1280px) {
+                    margin-top: 24px;
                 }
             }
         }

@@ -14,7 +14,7 @@ import PrimaryLogo from './PrimaryLogo.astro';
 		<h2 class="h2-italic">
 			Natural Selection Design
 		</h2>
-		<p class="medium-body">
+		<p class="small-body">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
 		</p>
 		<img src="../../icons/down-white-arrow.svg" alt="">
@@ -37,6 +37,10 @@ import PrimaryLogo from './PrimaryLogo.astro';
 
 			max-width: var(--max-width);
 			margin: auto;
+
+			> p:nth-of-type(2) {
+				width: 800px;
+			}
 		}
 
 		> img {
@@ -59,8 +63,8 @@ import PrimaryLogo from './PrimaryLogo.astro';
 				}
 
 				> p:nth-of-type(2) {
-					font-size: var(--small-body);
 					line-height: 140%;
+					width: auto;
 				}
 			}
 

@@ -2,7 +2,7 @@
     --small-body: 1rem;
     --medium-body: 1.5rem;
     --large-body: 2.5rem;
-    --h1: 10rem;
+    --h1: 7.5rem;
     --h2: 5.5rem;
     --h3: 2.5rem;
     --h4: 2rem;
@@ -60,6 +60,7 @@ h1 {
     font-family: Baton-Medium;
     font-size: var(--h1);
     letter-spacing: -.16px;
+    line-height: 100%;
 }
 
 h2 {
@@ -134,7 +135,7 @@ h5 {
 .medium-body {
     font-family: Apercu-Regular;
     font-size: var(--medium-body);
-    line-height: 120%;
+    line-height: 150%;
 }
 
 .medium-body-bold {

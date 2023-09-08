@@ -7,7 +7,7 @@ import '../styles/typography.css';
 <section>
     <div>
         <h2 class="h2-italic">Keep Up With us on Socials</h2>
-        <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+        <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
         <div>
 
         </div>
@@ -29,6 +29,10 @@ import '../styles/typography.css';
 
             max-width: var(--max-width);
 			margin: auto;
+
+            > p {
+                width: 800px;
+            }
         }
     }
 
@@ -43,6 +47,7 @@ import '../styles/typography.css';
 
                 > p {
                     font-size: var(--small-body) !important;
+                    width: auto;
                 }
             }
         }

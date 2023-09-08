@@ -10,8 +10,7 @@ import Button from './Button.astro';
 <section>
     <div>
         <div>
-            <h1>Seen Enough?</h1>
-            <h2>Let's Work Together</h2>
+            <h1>Seen Enough? <br> Let's Work Together</h1>
         </div>
         <p class="medium-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
         <Button color="whiteToBlack" href="" isUppercase={true} text="Book a Meeting"/>
@@ -33,6 +32,10 @@ import Button from './Button.astro';
 
             max-width: var(--max-width);
 			margin: auto;
+
+            > p {
+                width: 800px;
+            }
         }
     }
 
@@ -46,13 +49,11 @@ import Button from './Button.astro';
                     > h1 {
                         font-size: var(--h3);
                     }
-                    > h2 {
-                        font-size: var(--h4);
-                    }
                 }
 
                 > p {
                     font-size: var(--small-body) !important;
+                    width: auto;
                 }
             }
         }

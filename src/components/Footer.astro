@@ -11,7 +11,7 @@ import PrimaryLogo from './PrimaryLogo.astro';
 
 <footer>
     <div>
-        <div class="footer-leftcolumn">
+        <div class="__left-col">
             <a href="/">
                 <PrimaryLogo color="white" size="small"/>
             </a>
@@ -20,33 +20,32 @@ import PrimaryLogo from './PrimaryLogo.astro';
             </p>
             <Button href="" color="whiteToBlack" isUppercase={true} text="Book a Meeting"/>
         </div>
-        <div class="footer-rightcolumn">
-            <div>
-                <div>
+        <div class="__right-col">
+            <div class="__links-div">
+                <div class="__links-col">
                     <p class="medium-body">Services</p>
-                    <div>
+                    <div class="__links">
                         <Link color="white" href="/work/" size="small" isUppercase={false} isNavlink={false}  text="Work"/>
                         <Link color="white" href="/services/" size="small" isUppercase={false} isNavlink={false} text="Services"/>
                     </div>
-                        
                 </div>
-                <div>
+                <div class="__links-col">
                     <p class="medium-body">Company</p>
-                    <div>
+                    <div class="__links">
                         <Link color="white" href="/about/" size="small" isUppercase={false} isNavlink={false} text="About"/>
                         <Link color="white" href="/careers/" size="small" isUppercase={false} isNavlink={false} text="Careers"/>
                     </div>
                 </div>
-                <div>
+                <div class="__links-col">
                     <p class="medium-body">Reach Out</p>
-                    <div>
+                    <div class="__links">
                         <Link color="white" href="mailto:inquiries@nsdesign.ph" size="small" isUppercase={false} isNavlink={false} text="inquiries@nsdesign.ph"/>
                         <p class="small-body">+63 917 586 3211</p>
                     </div>
                 </div> 
             </div>
-            <div class="footer-border"></div>
-            <div>
+            <div class="__border"></div>
+            <div class="__info">
                 <p class="small-body">© Natural Selection Design</p>
                 <p class="small-body">Manila, Philippines</p>
             </div>
@@ -57,109 +56,86 @@ import PrimaryLogo from './PrimaryLogo.astro';
 <style>
     footer {
         background-color: var(--black);
+        display: flex;
+        justify-content: center;
         
         > div {
-            padding: 120px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            width: 100%;
             max-width: var(--max-width);
-            margin: auto;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
 
-            > div:nth-child(1) {
-                justify-self: start;
-                align-self: start;
+            @media (width >= 1280px) {
+                padding: 120px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15%;
+            }
+
+            > .__left-col {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 100%;
+                gap: 24px;
+                color: var(--off-white);
             }
-    
-            > div:nth-child(2) {
-                justify-self: end;
-                align-self: start;
+        
+            > .__right-col {
+                color: var(--off-white);
                 display: flex;
                 flex-direction: column;
                 gap: 32px;
-    
-                > div:nth-child(1) {
+        
+                > .__links-div {
                     display: flex;
-                    flex-direction: row;
-                    gap: 96px;
-    
-                    > div {
+                    flex-direction: column;
+                    gap: 40px;
+
+                    @media (width >= 1280px) {
+                        gap: 64px;
+                        flex-direction: row;
+                    }
+
+                    > .__links-col {
                         display: flex;
                         flex-direction: column;
-                        gap: 56px;
-    
-                        > div {
+                        gap: 16px;
+
+                        @media (width >= 1280px) {
+                            gap: 56px;
+                        }   
+
+                        > .__links {
                             display: flex;
                             flex-direction: column;
-                            gap: 32px;
+                            gap: 8px;
+
+                            @media (width >= 1280px) {
+                                gap: 16px;
+                            }  
                         }
-    
                     }
                 }
-    
-                > div:nth-child(2) {
+                
+                > .__border {
                     border: solid 1px var(--off-white);
                 }
-    
-                > div:nth-child(3) {
+
+                > .__info {
                     display: flex;
-                    flex-direction: row;
-    
-                    > p:nth-child(1) {
-                        margin-right: 190px;
-                    }
+                    flex-direction: column;
+                    gap: 8px;
+
+                    @media (width >= 1280px) {
+                        flex-direction: row;
+                        gap: 126px;
+                    }  
                 }
             }
         }
 
     }
 
-    p {
-        color: var(--off-white);
-    }
-
-    @media (width <= 430px) {
-        footer {
-            > div {
-                padding: 40px 24px;
-                display: flex;
-                flex-direction: column;
-                gap: 64px;
-
-                > div:nth-child(1) {
-                    gap: 24px;
-                }    
-                
-                > div:nth-child(2) {
-                    gap: 32px;
-                    width: 100%;
-
-                    > div:nth-child(1) {
-                        gap: 40px;
-                        flex-direction: column;
-
-                        > div {
-                            gap: 16px;
-
-                            > div {
-                                gap: 8px;
-                            }
-                        }
-                    }
-                    
-                    > div:nth-child(3) {
-                        flex-direction: column;
-                        gap: 8px;
-
-                        > p:nth-child(1) {
-                            margin-right: 0px;
-                        }
-                    }
-                }   
-            }
-        }
-    }
 </style>
