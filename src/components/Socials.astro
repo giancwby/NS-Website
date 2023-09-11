@@ -8,47 +8,38 @@ import '../styles/typography.css';
     <div>
         <h2 class="h2-italic">Keep Up With us on Socials</h2>
         <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-        <div>
-
-        </div>
     </div>
 </section>
 
 <style>
     section {
         background-color: var(--orange);
-        
+
         > div {
-            padding: 160px 120px 80px 120px;
             display: flex;
             flex-direction: column;
             gap: 32px;
             align-items: center;
             text-align: center;
             color: var(--off-white);
-
             max-width: var(--max-width);
 			margin: auto;
+            padding: 56px 24px;
+
+            @media (width >=1280px) {
+                padding: 56px 24px;
+            }
+
+            > h2 {
+                font-size: var(--h3);
+
+                @media (width >=1280px) {
+                    font-size: var(--h2);
+                }
+            }
 
             > p {
-                width: 800px;
-            }
-        }
-    }
-
-    @media (width <= 430px) {
-        section {
-            > div {
-                padding: 56px 24px;
-                
-                > h2 {
-                    font-size: var(--h3);
-                }
-
-                > p {
-                    font-size: var(--small-body) !important;
-                    width: auto;
-                }
+                max-width: 600px;
             }
         }
     }
