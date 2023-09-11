@@ -121,8 +121,14 @@ import MobileNav from '../../components/MobileNav.astro';
                 </div>
                 <div class="__slider">
                     <img-comparison-slider>
-                        <img slot="first" src="/images/projects/skyflakes-sandwich/slider--before.webp" />
-                        <img slot="second" src="/images/projects/skyflakes-sandwich/slider--after.webp" />
+                        <figure slot="first" class="--before">
+                            <img width="100%" src="/images/projects/skyflakes-sandwich/slider--before.webp">
+                            <figcaption class="small-body-mono">Before</figcaption>
+                        </figure>
+                      <figure slot="second" class="--after">
+                        <img width="100%" src="/images/projects/skyflakes-sandwich/slider--after.webp">
+                        <figcaption class="small-body-mono">After</figcaption>
+                      </figure>
                     </img-comparison-slider>
                 </div>
                 <div class="__intro__copy">
@@ -303,8 +309,8 @@ import MobileNav from '../../components/MobileNav.astro';
                 gap: 16px;
             }
 
-            > .__slider{
-                padding: 0px 24px;
+            > .__slider {
+                padding: 0 24px;
 
                 > img-comparison-slider {
                     --divider-color: var(--black);
@@ -315,8 +321,27 @@ import MobileNav from '../../components/MobileNav.astro';
                         outline: none;
                     }
 
-                    > img {
-                        width: 100%;
+                    > figure {
+                        margin: 0;
+                        
+                        > figcaption {
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            line-height: 100%;
+                            font-size: .8rem;
+                        }
+                        
+                        
+                        > img {
+                            width: 100%;
+                        }
+                    }
+
+                    > .--after > figcaption {
+                        bottom: 0 !important;
+                        top: initial !important;
                     }
                 }
             }
