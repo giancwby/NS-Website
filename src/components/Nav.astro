@@ -134,9 +134,9 @@ const {
 }
 
 <script>
-    var prevScrollpos = window.pageYOffset;
+    var prevScrollpos = window.scrollY;
     window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
+    var currentScrollPos = window.scrollY;
     if (prevScrollpos > currentScrollPos) {
         // User is scrolling up
         document.querySelector(".navbar").classList.remove("hide-navbar");
@@ -149,39 +149,75 @@ const {
 </script>
 
 <style>
-    ul {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        padding: 24px 120px;
-        max-width: var(--max-width);
-        margin: auto;
-    }
+    nav {
+        > ul {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 24px 24px;
+            display: grid;
+            margin: auto;
 
-    li {
-        justify-self: center;
-        align-self: center;
-    }
+            @media (width >= 768px) {
+                padding: 40px 80px;
+            }
 
-    li:nth-of-type(1) {
-        justify-self: start;
-    }
+            @media (width >= 1024px) {
+                grid-template-columns: repeat(5, 1fr);
+                padding: 24px 120px;
+                max-width: var(--max-width);
+            }
 
-    li:nth-of-type(5) {
-        justify-self: end;
-    }
+            > li {
+                justify-self: center;
+                align-self: center;
+            }
 
-    li:nth-of-type(6) {
-        display: none;
-        
-        > div {
-            width: 55px;
-            height: 4px;
-            transition: var(--transition);
+            > li:nth-of-type(1), li:nth-of-type(2), li:nth-of-type(4), li:nth-of-type(5)  {
+                display: none;
 
+                @media (width >= 1024px) {
+                    display: initial;
+                }
+            }
+
+            li:nth-of-type(1) {
+                @media (width >= 1024px) {
+                    justify-self: start;
+                }
+            }
+            
+            > li:nth-of-type(3)  {
+                justify-self: start;
+
+                @media (width >= 1024px) {
+                    justify-self: center;
+                }
+            }
+
+            li:nth-of-type(5) {
+                @media (width >= 1024px) {
+                    justify-self: end;
+                }
+            }
+
+            > li:nth-of-type(6)  {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                justify-self:end;
+
+                @media (width >= 1024px) {
+                    display: none;
+                }
+
+                > div {
+                    width: 55px;
+                    height: 4px;
+                    transition: var(--transition);
+                }
+            }
         }
     }
 
-    
     .hamburger-blue {
         > div {
             background-color: var(--off-white);
@@ -214,30 +250,5 @@ const {
 
     .hide-navbar {
         transform: translateY(-100%);
-    }
-
-    @media (width <= 430px) {
-        nav {
-
-            > ul {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 24px 24px;
-
-                > li:nth-of-type(1), li:nth-of-type(2), li:nth-of-type(4), li:nth-of-type(5)  {
-                    display: none;
-                }
-
-                > li:nth-of-type(3)  {
-                    justify-self: start;
-                }
-
-                > li:nth-of-type(6)  {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                    justify-self:end;
-                }
-            }
-        }
     }
 </style>

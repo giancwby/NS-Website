@@ -24,7 +24,7 @@ import '../styles/typography.css';
 				</p>
 				<div>
 					<h3>
-						Brands We've Worked With
+						Brands We've<br> Worked With
 					</h3>
 					<div class="small-body">
 						<div>
@@ -67,24 +67,41 @@ import '../styles/typography.css';
 		background-color: var(--blue);
 		
 		> div {
-			padding: 80px 120px 120px 120px;
 			display: flex;
 			flex-direction: column;
-			gap: 48px;
+			padding: 16px 24px 32px 24px;
 			align-items: center;
 			justify-items: center;
 			text-align: center;
 			color: var(--off-white);
-	
-			max-width: var(--max-width);
 			margin: auto;
+			gap: 24px;
+			
+			@media (width >=768px) {
+				padding: 80px;
+				gap: 48px;
+				max-width: var(--max-width);
+			}
+
+			> h2 {
+				font-size: var(--h3);
+
+				@media (width >=1280px) {
+					font-size: var(--h2);
+				} 
+			}
 
 			> img {
 				max-width: 100%;
 			}
 
 			> p {
-				width: 800px;
+				line-height: 140% !important;
+				width: auto;
+
+				@media (width >=1280px) {
+					width: 800px;
+				} 
 			}
 	
 			> div {
@@ -93,58 +110,40 @@ import '../styles/typography.css';
 				gap: 24px;
 				width: 100%;
 				margin-top: 24px;
+
+				> h3 > br {
+					@media (width >= 426px) {
+						display: none;
+					}
+				}
 	
 				> div {
 					display: grid;
-					grid-template-columns: repeat(3, 1fr);
-					gap: 40px;
+					grid-template-columns: repeat(1, 1fr);
+					gap: 8px;
+					
+					@media (width >=1280px) {
+						grid-template-columns: repeat(3, 1fr);
+						gap: 40px;
+					}
 	
 					> div{
 						display: flex;
 						flex-direction: column;
 						gap: 8px;
 						text-align: left;
+
+						> p {
+							text-align: center;
+						}
 	
 						> div{
 							border: solid 1px var(--off-white);
 						}
 
 						> div:nth-of-type(3) {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media (width <= 430px) {
-		section {
-			> div {
-				padding: 16px 24px 32px 24px;
-
-				> h2 {
-					font-size: var(--h3);
-				}
-
-				> p {
-					line-height: 140% !important;
-					width: auto;
-				}
-
-				> div {
-					> div {
-						grid-template-columns: repeat(1, 1fr);
-						gap: 8px;
-
-						> div {
-							> p {
-								font-size: var(--small-body);
-								text-align:center;
-							}
-							
-							> div:nth-of-type(3) {
-								display: block;
+							@media (width >=1280px) {
+								display: none;
 							}
 						}
 					}

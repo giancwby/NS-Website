@@ -12,7 +12,7 @@ import Button from './Button.astro';
         <div>
             <h1>Seen Enough? <br> Let's Work Together</h1>
         </div>
-        <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <Button color="whiteToBlack" href="" isUppercase={true} text="Book a Meeting"/>
     </div>
 </section>
@@ -32,8 +32,8 @@ import Button from './Button.astro';
             max-width: var(--max-width);
 			margin: auto;
 
-            @media (width >= 700px) {
-                padding: 56px 64px;
+            @media (width >= 768px) {
+                padding: 112px 64px 56px 64px;
             }
 
             @media (width >= 1280px) {
@@ -45,7 +45,7 @@ import Button from './Button.astro';
                 > h1 {
                     font-size: var(--h3);
 
-                    @media (width >=700px) {
+                    @media (width >=768px) {
                         font-size: var(--h2);
                     }
 
@@ -56,9 +56,9 @@ import Button from './Button.astro';
             }
 
             > p {
+                max-width: 600px;
 
-                @media (width >= 700px) {
-                    max-width: 600px;
+                @media (width >= 1024px) {
                     font-size: var(--medium-body) !important;
                 }
             }
