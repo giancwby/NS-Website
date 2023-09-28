@@ -50,17 +50,19 @@ const {
 <script>
 	const closeImg = document.getElementById('close');
 	const hamburgerImgBlue = document.getElementById('hamburger')
+	const mobileNav = document.getElementById('MobileNav');
+	const pageBody = document.body;
 
 	closeImg.addEventListener('click', function() {
-		const mobileNav = document.getElementById('MobileNav');
 		mobileNav.style.left = '450px';
 		mobileNav.style.opacity = '0';
+		pageBody.style.overflow = 'visible';
 	});
 
 	hamburgerImgBlue.addEventListener('click', function () {
-		const mobileNav = document.getElementById('MobileNav');
 		mobileNav.style.left = '0px';
 		mobileNav.style.opacity = '1';
+		pageBody.style.overflow = 'hidden';
 	});
 </script>
 
