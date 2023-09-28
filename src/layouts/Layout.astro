@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Preloader from '../components/preloader.astro';
 import MobileNav from '../components/MobileNav.astro';
+import { SEO } from 'astro-seo';
 
 // Props
 interface Props {
@@ -23,6 +24,17 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+		<SEO 
+			title={title}
+			description="We are a small design studio that articulates visual identities with a collaborative approach."
+			openGraph={{
+				basic: {
+				  title: title,
+				  type: "Portfolio",
+				  image: "/images/projects/team-commonarea.webp",
+				}
+			}}
+		/>
 		<title>{title}</title>
 	</head>
 	<body>

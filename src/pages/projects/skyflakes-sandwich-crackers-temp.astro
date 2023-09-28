@@ -1,0 +1,567 @@
+---
+// Style imports
+import '../../styles/global.css';
+import '../../styles/typography.css';
+
+// Component imports
+import CTA from '../../components/CTA.astro';
+import Socials from '../../components/Socials.astro';
+import Preloader from '../../components/preloader.astro';
+import Footer from '../../components/Footer.astro';
+import Link from '../../components/Link.astro';
+import SecondaryLogo from '../../components/SecondaryLogo.astro';
+import Button from '../../components/Button.astro';
+import MobileNav from '../../components/MobileNav.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+		<title>Skyflakes Sandwich Crackers</title>
+        <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"/>
+
+	</head>
+	<body>
+		<Preloader />
+        <MobileNav />
+		<nav>
+            <div>
+                <ul>
+                    <li class="__work">
+                        <Link 
+                            color="black"
+                            href="/work/"
+                            size="small"
+                            isUppercase={true}
+                            isNavlink={true}
+                            text="Work"
+                        />
+                    </li>
+                    <li class="__services">
+                        <Link 
+                            color="black"
+                            href="/services/"
+                            size="small"
+                            isUppercase={true}
+                            isNavlink={true}
+                            text="Services"
+                        />
+                    </li>
+                    <li class="__logo">
+                        <a href="/">
+                            <SecondaryLogo size="small" type="acronym"/>    
+                        </a>
+                    </li>
+                    <li class="__about">
+                        <Link 
+                            color="black"
+                            href="/about/"
+                            size="small"
+                            isUppercase={true}
+                            isNavlink={true}
+                            text="About"
+                        />
+                    </li>
+        
+                    <li class="__contact">
+                        <Button 
+                            color="black"
+                            href="/contact/"
+                            isUppercase={true}
+                            text="Contact Us"
+                        />
+                    </li>
+                    <li class="__hamburger" id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </li> 
+                </ul>
+            </div>
+        </nav>
+        <section class="hero-image">
+            <picture>
+                <source srcset="/images/projects/skyflakes-sandwich/hero--desktop.webp" media="(min-width: 1280px)">
+                <img src="/images/projects/skyflakes-sandwich/hero--mobile.webp" alt="Skyflakes Sandwich Crackers Hero Shot">
+            </picture>
+        </section>
+        <section class="heading">
+            <div>
+                <div class="__title__div">
+                    <div class="__title">
+                        <p class="small-body-mono">Skyflakes Sandwich Crackers</p>
+                        <h1>Communicating a Creamy Crunch</h1>
+                    </div>
+                    <p class="small-body">SkyFlakes Sandwich Crackers are a popular snack that have become a staple in many lunchboxes and pantries in the Philippines. Each sandwich cracker is composed of three cracker pieces with flavored cream filling piped in between. Their existing packaging design was due for a refresh. We were tasked to find a way to visually capture how crisp the crackers are and to infuse this energy to all the other elements on the packs.</p>
+                </div>
+                <div class="__info__div">
+                    <div class="__client">
+                        <p class="small-body-mono">Client</p>
+                        <h2>Monde Nissin</h2>
+                    </div>
+                    <div class="__tags__div">
+                        <p class="small-body-mono">Tags</p>
+                        <div class="__tags__group">
+                            <div class="__tags small-body-mono">Packaging Design</div>
+                            <div class="__tags small-body-mono">Art Direction</div>
+                            <div class="__tags small-body-mono">Photography</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="body">
+            <div>
+                <div class="__intro__pics">
+                    <img src="/images/projects/skyflakes-sandwich/hero--square.webp" alt="Skyflakes Sandwich Crackers Hero Shot">
+                    <img src="/images/projects/skyflakes-sandwich/lunchbox--portrait.webp" alt="Skyflakes Sandwich Crackers in Lunchbox">
+                </div>
+                <div class="__slider">
+                    <img-comparison-slider>
+                        <figure slot="first" class="--before">
+                            <img width="100%" src="/images/projects/skyflakes-sandwich/slider--before.webp">
+                            <figcaption class="small-body-mono">Before</figcaption>
+                        </figure>
+                      <figure slot="second" class="--after">
+                        <img width="100%" src="/images/projects/skyflakes-sandwich/slider--after.webp">
+                        <figcaption class="small-body-mono">After</figcaption>
+                      </figure>
+                    </img-comparison-slider>
+                </div>
+                <div class="__intro__copy">
+                    <p class="small-body">First on the agenda was to produce new product photography. The old packaging featured an intact sandwich cracker. To evoke the crunchiness of the crackers, the client requested to show the sandwich split in half. We tested out different cracker angles then settled on the one that was the showstopper.</p>
+                </div>
+                <div class="__products">
+                    <img src="/images/projects/skyflakes-sandwich/products--inner.webp" alt="">
+                    <img src="/images/projects/skyflakes-sandwich/products--outer.webp" alt="">
+                </div>
+                <div class="__crackers__box">
+                    <img src="/images/projects/skyflakes-sandwich/crackers.webp" alt="Floating Skyflakes Sandwich Crackers with Chocolate Cream">
+                    <div class="__crackers__copy">
+                        <p class="small-body">
+                            It was important to be able to highlight the texture of the crackers. The photography captured all the grooves and uneven ridges, all the real life details that make SkyFlakes what it is. We wanted consumers to know that the sandwich cracker on the packaging is the same delicious one on the inside.
+                            <br><br>
+                            We also had splashes 3D-rendered to make it look like the sandwich cracker is bursting from cream. The packaging system came together with the addition of dynamic typefaces and punchy background colors.
+                        </p>
+                    </div>
+                </div>
+                <div class="__outer__loop">
+                    <img src="/images/projects/skyflakes-sandwich/outer--loop--compressed.gif" alt="Skyflakes Sandwich Crackers Outer Packaging Designs Looping">
+                </div>
+                <div class="__closer">
+                    <p class="small-body">The result injected new life in a well-loved brand. <br>It even caught the attention of local publication <span><a href="https://www.adobomagazine.com/adobo-exclusive/ns-design-founder-marla-darwin-walks-us-through-the-revamp-of-the-classic-filipino-skyflakes/" target="_blank">Adobo Magazine</a></span>.</p>
+                </div>
+                <div class="__closer__pics">
+                    <img src="/images/projects/skyflakes-sandwich/lunchbox--square.webp" alt="Skyflakes Sandwich Crackers in Lunchbox">
+                    <img src="/images/projects/skyflakes-sandwich/hero--square.webp" alt="Skyflakes Sandwich Crackers Hero Shot">
+                </div>
+            </div>
+        </section>
+        <CTA />
+        <Socials />
+		<Footer />
+	</body>
+</html>
+
+<script
+  defer
+  src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+></script>
+
+<script>
+    const closeImg = document.getElementById('close');
+	const hamburger = document.getElementById('hamburger')
+
+	closeImg.addEventListener('click', function() {
+		const mobileNav = document.getElementById('MobileNav');
+		mobileNav.style.left = '450px';
+		mobileNav.style.opacity = '0';
+	});
+
+	hamburger.addEventListener('click', function () {
+		const mobileNav = document.getElementById('MobileNav');
+		mobileNav.style.left = '0px';
+		mobileNav.style.opacity = '1';
+	});
+</script>
+
+<style>
+    nav {
+        background-image: url('/images/projects/skyflakes-sandwich/nav__bg-image--mobile.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (width >= 1280px) {
+            background-image: url('/images/projects/skyflakes-sandwich/nav__bg-image--desktop.webp');
+            display: flex;
+            justify-content: center;
+        }
+        
+        > div {
+            @media (width >=1280px ) {
+                width: var(--max-width);
+            }
+
+            > ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 24px;
+
+                @media (width >= 700px) {
+                    padding: 40px 64px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 40px 120px;
+                }
+
+                > .__work, .__services, .__about, .__contact {
+                    display: none;
+                    
+                    @media (width >= 1280px) {
+                        display: block;
+                    }
+                }
+
+    
+                > .__hamburger {
+                    @media (width >= 1280px) {
+                        display: none;
+                    }
+
+                    > div {
+                        width: 55px;
+                        height: 4px;
+                        background-color: var(--black);
+                    }
+                    
+                    > div:nth-child(1), div:nth-child(2) {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-image {
+        > picture {
+            display: flex;
+            > img {
+                width: 100%;
+            }
+        }
+    }
+
+    .heading {
+        background-color: var(--off-white);
+        display: flex;
+        justify-content: center;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 32px 24px;
+            max-width: var(--max-width);
+
+            @media (width >= 700px) {
+                padding: 64px 64px;
+            }
+
+            @media (width >=1280px) {
+                padding: 120px;
+                display: grid;
+                grid-template-columns: 3fr 1.5fr;
+                gap: 15%;
+            }
+
+            > .__title__div {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                > .__title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    > h1 {
+                        font-size: var(--h3);
+
+                        @media (width >=1280px) {
+                            font-size: var(--h2);
+                        }
+                    }
+                }
+            }
+
+            > .__info__div {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                > .__client {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    > h2 {
+                        font-size: var(--h4);
+
+                        @media (width >=1280px) {
+                            font-size: var(--h3);
+                        }
+                    }
+                }
+
+                > .__tags__div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    > .__tags__group {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+
+                        > .__tags {
+                            padding: 4px 8px 6px 8px;
+                            border: 1px solid var(--black);
+                        }
+                    }
+                }
+            }
+        }  
+    }
+
+    .body {
+        background-color: var(--off-white);
+
+        @media (width >= 1280px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+
+            @media (width >=1280px) {
+                gap: 120px;
+                align-items: center;
+            }
+
+            > .__intro__pics {
+                padding: 32px 24px 0px 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                max-width: var(--max-width);
+
+                @media (width >= 700px) {
+                    padding: 0 64px;
+                }
+                
+                @media (width >= 1280px) {
+                    padding: 0 120px;
+                    display: grid;
+                    grid-template-columns: 3fr 1.989fr;
+                }
+
+                > img{
+                    @media (width >= 1280px) {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+
+            > .__slider {
+                padding: 0 24px;
+                max-width: var(--max-width);
+
+                @media (width >=700px) {
+                    padding: 0 64px;
+                }
+
+                @media (width >=1280px) {
+                    padding: 0 120px;
+                }
+
+                > img-comparison-slider {
+                    --divider-color: var(--black);
+                    --default-handle-color: var(--black);
+                    --default-handle-width: clamp(40px, 10vw, 200px);
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+
+                    @media (width >=1280px) {
+                        --divider-width: 2px;
+                    }
+
+                    > figure {
+                        margin: 0;
+                        
+                        > figcaption {
+                            position: absolute;
+                            top: 5%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            line-height: 100%;
+                            font-size: .8rem;
+
+                            @media (width >=1280px) {
+                                font-size: 1rem;
+                            }
+                        }
+                        
+                        
+                        > img {
+                            width: 100%;
+                        }
+                    }
+
+                    > .--after > figcaption {
+                        bottom: 5%;
+                        top: initial;
+                    }
+                }
+            }
+
+            > .__intro__copy{
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >=700px) {
+                    padding: 0px 64px;
+                    margin: auto;
+                }
+
+                @media (width >=1280px) {
+                    width: 800px;
+                    margin: auto;
+                }
+            }
+
+            > .__products{
+                display: flex;
+                flex-direction: column;
+
+                @media (width >=1280px ) {
+                    max-width: var(--max-width);
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                > img {
+                        @media (width >= 1280px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            > .__crackers__box{
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                @media (width >=1280px ) {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                > img {
+                        @media (width >= 1280px) {
+                        width: 100%;
+                    }
+                }
+
+                > .__crackers__copy {
+                    text-align: center;
+                    padding: 0px 24px;
+
+                    @media (width >= 700px) {
+                        padding: 0px 64px;
+                    }
+
+                    @media (width >= 1280px) {
+                        text-align: left;
+                        margin: auto;
+                        width: 400px;
+                    }
+                }
+            }
+
+            > .__outer__loop{
+                padding: 0px 24px;
+                max-width: var(--max-width);
+
+                @media (width >= 700px) {
+                    padding: 0px 64px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                }
+
+                > img {
+                    width: 100%;
+                }
+            }
+
+            > .__closer{
+                padding: 0px 24px;
+                text-align: center;
+                
+                > p > span > a {
+                    color: var(--black);
+                    text-decoration: underline black;
+                    text-decoration-style: wavy;
+                    text-underline-offset: .3rem;
+                    transition: var(--transition);
+
+                    &:hover {
+                        color: var(--orange);
+                        text-decoration: underline var(--orange);
+                        text-decoration-style: wavy;
+                    }
+                }
+
+                > p > br {
+                    display: none;
+
+                    @media (width >= 700px) {
+                        display: initial;
+                    }
+                }
+            }
+
+            > .__closer__pics{
+                display: flex;
+                flex-direction: column;
+
+                @media (width >= 1280px) {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                > img {
+                    @media (width >= 1280px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+
