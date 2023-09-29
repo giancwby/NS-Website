@@ -166,7 +166,7 @@ const {
     const pageBody = document.body;
 
 	closeImg.addEventListener('click', function() {
-		mobileNav.style.left = '450px';
+		mobileNav.style.left = '1000px';
 		mobileNav.style.opacity = '0';
         pageBody.style.overflow = 'visible';
 	});
@@ -203,25 +203,28 @@ const {
                 align-items: center;
                 padding: 24px;
 
-                @media (width >= 700px) {
-                    padding: 40px 64px;
+                @media (width >= 768px) {
+                    padding: 40px 80px;
                 }
 
-                @media (width >= 1280px) {
-                    padding: 40px 120px;
+                @media (width >= 1024px) {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    justify-items: center;
+                    padding: 40px 80px;
                 }
 
                 > .__work, .__services, .__about, .__contact {
                     display: none;
                     
-                    @media (width >= 1280px) {
+                    @media (width >= 1024px) {
                         display: block;
                     }
                 }
 
     
                 > .__hamburger {
-                    @media (width >= 1280px) {
+                    @media (width >= 1024px) {
                         display: none;
                     }
 
