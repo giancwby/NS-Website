@@ -57,12 +57,14 @@ const {
 		mobileNav.style.left = '450px';
 		mobileNav.style.opacity = '0';
 		pageBody.style.overflow = 'visible';
+		mobileNav.style.zIndex = '98'
 	});
 
 	hamburgerImgBlue.addEventListener('click', function () {
 		mobileNav.style.left = '0px';
 		mobileNav.style.opacity = '1';
-		pageBody.style.overflow = 'hidden';
+		pageBody.style.overflow = 'hidden'; 
+		mobileNav.style.zIndex = '100'
 	});
 </script>
 
