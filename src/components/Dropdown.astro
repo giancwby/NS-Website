@@ -171,6 +171,22 @@ import '../styles/typography.css';
         }
     }
 
+    @media (width <= 1024px) {
+        h2 {
+            font-size: var(--h3);
+        }
+
+        div {
+            gap: 80px;
+
+            > div > div > img {
+                width: 16px !important;
+            }
+        }
+
+
+    }
+
     .clickable-div:hover {
         cursor: pointer;
     }

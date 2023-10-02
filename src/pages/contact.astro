@@ -60,20 +60,37 @@ import Input from '../components/Input.astro';
 <style>
     section:nth-of-type(1) {
         background-color: var(--blue);
-        padding: 200px 120px 120px 120px;
+        padding: 160px 24px 32px 24px;
         color: var(--off-white);
+
+        @media (width >=768px) {
+            padding: 200px 80px 120px 80px;
+        }
+        
+        @media (width >=1280px) {
+            padding: 200px 120px 120px 120px;
+        }
 
         > div {
             display: flex;
-            flex-direction: row;
-
+            flex-direction: column;
             max-width: var(--max-width);
-			margin: auto;    
+			margin: auto;  
+            gap: 40px;  
+            
+            @media (width >=1280px) {
+                flex-direction: row;
+                gap: 0px;
+            }
 
             > div {
                 display: flex;
                 flex-direction: column;
-                gap: 80px;
+                gap: 40px;
+
+                @media (width >=1280px) {
+                    gap: 80px;
+                }
 
                 > div {
                     display: flex;
@@ -84,38 +101,79 @@ import Input from '../components/Input.astro';
                         color: var(--off-white);
                     }
                 }
+
+                > h2 {
+                    font-size: 4rem;
+                    line-height: 100%;
+
+                    @media (width >=1280px) {
+                        font-size: var(--h2);
+                    }
+                }
             }
 
             > img {
-                width: 460px;
                 object-fit: contain;
+                max-width: 100%;
+                
+                @media (width >=1280px) {
+                    width: 460px;
+                }
             }
         }
     }
 
     section:nth-of-type(2) {
         background-color: var(--off-white);
-        padding: 160px 120px;
+        padding: 64px 24px 32px 24px;
         text-align: center;
+
+        @media (width >=768px) {
+            padding: 80px;
+        }
+
+        @media (width >= 1280px) {
+            padding: 160px 120px;
+        }
 
         > div {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 24px;
             align-items: center;
-
             max-width: var(--max-width);
 			margin: auto;
 
+            @media (width >= 1280px) {
+                gap: 40px;
+            }
+
             > h1 {
-                @media (width <= 1280px) {
-                    font-size: var(--h3);;
+                font-size: var(--h3);
+
+                @media (width >= 768px) {
+                    font-size: 4rem;
+                }
+
+                @media (width >= 1280px) {
+                    font-size: var(--h1);
+                }
+            }
+
+            > h2 {
+                font-size: var(--h4);
+
+                @media (width >= 1280px) {
+                    font-size: var(--h2);
                 }
             }
 
             > p {
+                font-size: var(--small-body);
+
                 @media (width >= 1280px) {
                     width: 800px;
+                    font-size: var(--medium-body);
                 }
             }
         } 
@@ -155,29 +213,68 @@ import Input from '../components/Input.astro';
 
 
     section:nth-of-type(4) {
+        padding: 32px 24px;
+
+        @media (width >= 768px) {
+            padding: 80px;
+        }
+
+        @media (width >= 1280px) {
+            padding: 0px;
+        }
+
         > div {
             display: flex;
             flex-direction: column;
-            gap: 64px;
+            gap: 32px;
+            
+            @media (width >= 1280px) {
+                gap: 64px;
+            }
 
             > div {
                 display: flex;
                 flex-direction: column;
-                gap: 32px;
+                gap: 16px;
+
+                @media (width >= 1280px) {
+                    gap: 32px;
+                }
 
                 > p {
+                    font-size: var(--small-body);
+
                     @media (width >= 1280px) {
                         width: 800px;
+                        font-size: var(--medium-body);
+                    }
+                }
+
+                > h2 {
+                    font-size: var(--h4);
+
+                    @media (width >= 768px) {
+                        font-size: 3rem;
+                    }
+
+                    @media (width >= 1280px) {
+                        font-size: var(--h2);
                     }
                 }
             }
+        }
 
             > img {
-                width: 1116px;
                 align-self: center;
+                width: 100%;
+                
+                @media (width >= 1280px) {
+                    width: 1116px;
+                    font-size: var(--medium-body);
+                }
             }
         }
-    } 
+    
 
     button {
         padding: 14px 24px;
@@ -194,67 +291,6 @@ import Input from '../components/Input.astro';
         &:hover {
             background-color: var(--black);
             color: var(--off-white);
-        }
-    }
-
-    @media (width <= 430px) {
-        main {
-            > section:nth-child(1) {
-                padding: 160px 24px 32px 24px;
-                > div {
-                    flex-direction: column;
-                    gap: 40px;
-
-                    > div {
-                        gap: 40px;
-                        > h2 {
-                            font-size: 4rem;
-                            line-height: 100%;
-                        }
-                    }
-                    > img {
-                        max-width: 100%;
-                    }
-                }
-            }
-
-            > section:nth-child(2) {
-                padding: 64px 24px 32px 24px;
-                > div {
-                    gap: 24px;
-                    > div {
-                        > h1 {
-                            font-size: var(--h3);
-                        }
-                        > h2 {
-                            font-size: var(--h4);
-                        }
-                    }
-                    > p {
-                        font-size: var(--small-body);
-                    }
-                }
-            }
-
-            > section:nth-child(4) {
-                padding: 32px 24px;
-                > div {
-                    gap: 32px;
-                    > div {
-                        gap: 16px;
-
-                        > h2 {
-                            font-size: var(--h4);
-                        }
-                        > p {
-                            font-size: var(--small-body);
-                        }
-                    }
-                    > img {
-                        max-width: 100%;
-                    }
-                }
-            }
         }
     }
 </style>

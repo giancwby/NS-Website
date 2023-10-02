@@ -36,6 +36,11 @@ import '../styles/typography.css';
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            @media (width >=430px) {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
             
             > div {
                 display: flex;
@@ -54,6 +59,11 @@ import '../styles/typography.css';
     img {
         width: 257px;
         height: 290px;
+
+        @media (width <= 1024px) {
+            width: 207px;
+            height: 240px;
+        }
     }
 
     .first-row, .last-row {
@@ -87,6 +97,11 @@ import '../styles/typography.css';
         left: 50%;
         margin-left: -128px;
         z-index: 1;
+
+        @media (width <= 1024px) {
+            margin-left: -103px;
+            transform: scale(.98);
+        }
     }
 
     @media (width <= 430px) {

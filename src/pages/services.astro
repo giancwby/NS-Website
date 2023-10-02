@@ -49,6 +49,10 @@ import Dropdown from '../components/Dropdown.astro';
         padding: 136px 24px 40px 24px;
         color: var(--off-white);
 
+        @media (width >=768px) {
+            padding: 200px 80px 40px 80px;
+        }
+
         @media (width >=1280px) {
             padding: 200px 120px 120px 120px;
         }
@@ -72,6 +76,10 @@ import Dropdown from '../components/Dropdown.astro';
                     > img {
                         width: 244px;
                         margin-bottom: 4px;
+
+                        @media (width >=768px) {
+                            width: 350px;
+                        }
         
                         @media (width >=1280px) {
                             width: 460px;
@@ -81,6 +89,11 @@ import Dropdown from '../components/Dropdown.astro';
                     > h1 {
                         font-size: 4rem;
                         transform: translateX(-3px);
+
+                        @media (width >=768px) {
+                            font-size: var(--h2);
+                            transform: translateX(-6.5px);
+                        }
     
                         @media (width >=1280px) {
                             font-size: var(--h1);
@@ -91,6 +104,10 @@ import Dropdown from '../components/Dropdown.astro';
 
                 > p {
                     padding-left: 48px;
+
+                    @media (width >=768px) {
+                        padding-left: initial;
+                    }
 
                     @media (width >=1280px) {
                         padding-left: initial;
@@ -117,6 +134,10 @@ import Dropdown from '../components/Dropdown.astro';
             padding: 16px 24px 40px 24px; 
             gap: 24px;
 
+            @media (width >=768px) {
+                padding: 80px;
+            }
+
             @media (width >= 1280px) {
                 padding: 80px 120px 120px 120px;
                 gap: 108px;
@@ -127,6 +148,10 @@ import Dropdown from '../components/Dropdown.astro';
     .scope {
         background-color: var(--off-white);
         padding: 32px 16px;
+
+        @media (width >=768px) {
+            padding: 80px;
+        }
 
         @media (width >= 1280px) {
             padding: 120px;
@@ -161,8 +186,8 @@ import Dropdown from '../components/Dropdown.astro';
                     line-height: 90%;
                     margin-bottom: 16px;
 
-                    @media (width >= 1280px) {
-                        font-size: var(--h2);
+                    @media (width >= 768px) {
+                        font-size: 4.5rem;
                         margin-bottom: 40px;
                     }
                 }
