@@ -23,7 +23,10 @@ interface Props {
 	imageAltText: string;
 	brand: string;
 	client: string;
-    tags: Array<string>
+    tags: Array<string>;
+    navBackgroundColor: string;
+    navBackgroundImageDesktop: string;
+    navBackgroundImageMobile: string;
 }
 
 const {
@@ -34,7 +37,10 @@ const {
     imageAltText,
     brand,
     client,
-    tags
+    tags,
+    navBackgroundColor,
+    navBackgroundImageDesktop,
+    navBackgroundImageMobile
 } = Astro.props as Props
 ---
 
@@ -179,16 +185,18 @@ const {
 	});
 </script>
 
-<style>
+<style define:vars={{navBackgroundColor, navBackgroundImageDesktop, navBackgroundImageMobile}}>
     nav {
-        background-image: url('/images/projects/skyflakes-sandwich/nav__bg-image--mobile.webp');
+        background-image: var(--navBackgroundImageMobile);
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: var(--navBackgroundColor);
 
         @media (width >= 1280px) {
-            background-image: url('/images/projects/skyflakes-sandwich/nav__bg-image--desktop.webp');
+            background-image: var(--navBackgroundImageDesktop);
             display: flex;
             justify-content: center;
+            background-color: var(--navBackgroundColor);
         }
         
         > div {
@@ -204,7 +212,7 @@ const {
                 padding: 24px;
 
                 @media (width >= 768px) {
-                    padding: 40px 80px;
+                    padding: 48px 56px;
                 }
 
                 @media (width >= 1024px) {
@@ -263,8 +271,8 @@ const {
             padding: 32px 24px;
             max-width: var(--max-width);
 
-            @media (width >= 700px) {
-                padding: 64px 64px;
+            @media (width >= 768px) {
+                padding: 64px 56px;
             }
 
             @media (width >=1280px) {
@@ -287,8 +295,9 @@ const {
                     > h1 {
                         font-size: var(--h3);
 
-                        @media (width >=1280px) {
+                        @media (width >=768px) {
                             font-size: var(--h2);
+                            transform: translateX(-.8%);
                         }
                     }
                 }

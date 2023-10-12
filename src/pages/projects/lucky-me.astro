@@ -1,0 +1,376 @@
+---
+// Style imports
+import '../../styles/global.css';
+import '../../styles/typography.css';
+
+// Layout import
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+---
+
+<ProjectLayout 
+    title='Reimagining Noodles'
+    description='In the Philippines, instant mami and pancit canton are part of the average Filipino’s diet. Lucky Me! Instant Noodles recently overhauled their packaging system and were in need of new product photography for the entire Instant Mami and Pancit Canton lines. What followed was a meticulous assembly line that brought together graphic design, food styling, photography, post-production, and project management. Everyone worked together to bring forth a visual narrative that was true to the vision of the all-new packaging design.'
+    desktopImage='/images/projects/lucky-me/hero--desktop.webp'
+    mobileImage='/images/projects/lucky-me/hero--desktop.webp'
+    imageAltText='Lucky Me Go Cups Hero Shot'
+    brand='Lucky Me'
+    client='Monde Nissin'
+    tags={['Art Direction', 'Photography']}
+    navBackgroundColor='#E39F1A'
+    navBackgroundImageMobile='none'
+    navBackgroundImageDesktop='none'
+>
+<section class="body">
+    <div>
+        <div class="slider--tablet">
+            <img-comparison-slider>
+                <figure slot="first" class="--before">
+                    <img width="100%" src="/images/projects/lucky-me/slider--before--tablet.webp">
+                    <figcaption class="small-body-mono">Before</figcaption>
+                </figure>
+              <figure slot="second" class="--after">
+                <img width="100%" src="/images/projects/lucky-me/slider--after--tablet.webp">
+                <figcaption class="small-body-mono">After</figcaption>
+              </figure>
+            </img-comparison-slider>
+        </div>
+        <div class="slider--mobile">
+            <img-comparison-slider>
+                <figure slot="first" class="--before">
+                    <img width="100%" src="/images/projects/lucky-me/slider--before--mobile.webp">
+                    <figcaption class="small-body-mono">Before</figcaption>
+                </figure>
+              <figure slot="second" class="--after">
+                <img width="100%" src="/images/projects/lucky-me/slider--after--mobile.webp">
+                <figcaption class="small-body-mono">After</figcaption>
+              </figure>
+            </img-comparison-slider>
+        </div>
+        <div class="copy--1">
+            <p class="small-body">The big challenge was the find a way to make the narrative cohesive but find ways to differentiate one plate from another. <br>The first differentiator was between Instant Mami and Pancit Canton.</p>
+        </div>
+        <div class="illos">
+            <picture>
+                <source srcset='/images/projects/lucky-me/illustrations--desktop.webp' media="(min-width: 768px)">
+                <img src='/images/projects/lucky-me/illustrations--mobile.webp' alt='Lucky Me Food Shot Illustrations' width="100%">
+            </picture>
+        </div>
+        <div class="copy--2">
+            <p class="small-body">Then further within each category, we proposed different ways to cut, angle, or style the same ingredients––just so each flavor variant has its own personality.</p>
+        </div>
+        <div class="process">
+            <div class="__illustration">
+                <img src="/images/projects/lucky-me/beef-na-beef--illustration.webp" alt="Lucky Me Beef na Beef Food Illustration for Art Direction" width="100%">
+                <div class="__copy">
+                    <p class="small-body">These were all illustrated first, digitally drawn with a lot of care and intention.</p>
+                    <picture>
+                        <source srcset='/images/projects/lucky-me/arrow--curved.svg' media="(min-width: 768px)" class="arrow">
+                        <img src='/images/projects/lucky-me/arrow--vertical.svg' alt='arrow'>
+                    </picture>
+                </div>
+            </div>
+            <div class="__photo">
+                <img src="/images/projects/lucky-me/beef-na-beef--photo.webp" alt="Lucky Me Beef na Beef Photography" width="100%">
+                <div class="__copy">
+                    <p class="small-body">Once the illustrations were approved, we transitioned to the next phase of the production: briefing the styling, photography, and digital editing team.</p>
+                    <picture>
+                        <source srcset='/images/projects/lucky-me/arrow--curved.svg' media="(min-width: 768px)">
+                        <img src='/images/projects/lucky-me/arrow--vertical.svg' alt='arrow'>
+                    </picture>
+                </div>
+            </div>
+            <img src="/images/projects/lucky-me/beef-na-beef--pack-shot.webp" alt="Lucky Me Instant Mami Pack Shot Design" width="100%">
+        </div>
+        <div class="food-shots">
+            <picture>
+                <source srcset='/images/projects/lucky-me/food-shots--desktop.webp' media="(min-width: 1280px)">
+                <img src='/images/projects/lucky-me/food-shots--tablet.webp' alt='Lucky Me New Packaging Design Food Photography' width="100%">
+            </picture>
+        </div>
+        <div class="copy--3">
+            <p class="small-body"> The work here was to make sure all the unique ingredients, colors, and textures were brought to life. <br>Each noodle strand and soup puddle were there to look their best.</p>
+        </div>
+        <div class="pack-shots">
+            <picture>
+                <source srcset='/images/projects/lucky-me/pack-shots--desktop.webp' media="(min-width: 768px)">
+                <img src='/images/projects/lucky-me/pack-shots--mobile.webp' alt='Lucky Me New Packaging Design' width="100%">
+            </picture>
+        </div>
+    </div>
+</section>
+
+</ProjectLayout>
+
+<style>
+    .body {
+        background-color: var(--off-white);
+
+        @media (width >= 1280px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+
+            @media (width >=1280px) {
+                gap: 120px;
+                align-items: center;
+            }
+
+            >.slider--mobile {
+                @media (width >= 768px) {
+                    display: none;
+                }
+            }
+
+            >.slider--tablet {
+                display: none;
+
+                @media (width >= 768px) {
+                    display: block;
+                }
+            }
+
+            > .slider--tablet, .slider--mobile {
+                padding: 0 24px;
+                max-width: var(--max-width);
+
+                @media (width >=768px) {
+                    padding: 0 56px;
+                }
+
+                @media (width >=1280px) {
+                    padding: 0 120px;
+                }
+
+                > img-comparison-slider {
+                    --divider-color: var(--black);
+                    --default-handle-color: var(--black);
+                    --default-handle-width: clamp(40px, 10vw, 200px);
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+
+                    @media (width >=1280px) {
+                        --divider-width: 2px;
+                    }
+
+                    > figure {
+                        margin: 0;
+                        
+                        > figcaption {
+                            position: absolute;
+                            top: 5%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            line-height: 100%;
+                            font-size: .8rem;
+
+                            @media (width >=1280px) {
+                                font-size: 1rem;
+                            }
+                        }
+                        
+                        
+                        > img {
+                            width: 100%;
+                        }
+                    }
+
+                    > .--after > figcaption {
+                        bottom: 5%;
+                        top: initial;
+                    }
+                }
+            }
+
+            > .copy--1 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                }
+
+                > p > br {
+                    display: none;
+
+                    @media (width >= 1024px) {
+                        display: initial;
+                    }
+                }
+            }
+
+            > .illos {
+                max-width: var(--max-width);
+            }
+
+            > .copy--2 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                    max-width: 750px;
+                }
+            }
+
+            > .process {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 24px;
+                padding: 0px 24px;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                    max-width: var(--max-width);
+                }
+
+                > .__illustration {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @media (width >= 768px) {
+                        flex-direction: row;
+                        align-items: flex-end;
+                    }
+
+                    > img {
+                        @media (width >=768px) {
+                            width: 450px;
+                        }
+                        @media (width >=1280px) {
+                            width: 550px;
+                        }
+                    }
+
+                    > .__copy {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                        align-items: center;
+                        text-align: center;
+
+                        @media (width >=768px) {
+                            text-align: left;
+                            align-items: start;
+                            gap: 80px;
+                        }
+                        @media (width >=1280px) {
+                            width: 315px;
+                            gap: 160px;
+                        }
+                    }
+                }
+
+                > .__photo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @media (width >= 768px) {
+                        flex-direction: row-reverse;
+                        align-items: flex-end;
+                    }
+
+                    > img {
+                        @media (width >=768px) {
+                            width: 450px;
+                        }
+                        @media (width >=1280px) {
+                            width: 550px;
+                        }
+                    }
+
+                    > .__copy {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                        align-items: center;
+                        text-align: center;
+
+                        @media (width >=768px) {
+                            text-align: left;
+                            align-items: end;
+                            gap: 80px;
+                        }
+
+                        @media (width >=1280px) {
+                            width: 315px;
+                            margin-bottom: 80px;
+                        }
+
+                        > picture {
+                            @media (width >= 768px) {
+                                transform: scaleX(-1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            > .food-shots {
+                padding: 0px 24px;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                    max-width: var(--max-width);
+                }
+            }
+            
+            > .copy--3 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                > p > br {
+                    display: none;
+
+                    @media (width >= 1024px) {
+                        display: initial;
+                    }
+                }
+            }
+
+            > .pack-shots {
+                padding: 0px 24px 64px 24px;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px 120px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px 120px 120px;
+                    max-width: var(--max-width);
+                }
+            }
+        }
+    }
+</style>
+
+
