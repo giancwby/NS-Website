@@ -1,0 +1,197 @@
+---
+// Style imports
+import '../../styles/global.css';
+import '../../styles/typography.css';
+
+// Layout import
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+---
+
+<ProjectLayout 
+    title='Safety and Fun Come Together'
+    description='Before any piercing at Piercing Day Studio, clients undergo a thorough consultation with its piercers. They discuss the entire process, from preparation to aftercare, ensuring clients are well-informed. They work with clients to choose the best placement and jewelry options, taking into consideration what their style and preferences are. The studio wanted their print materials to reflect this relationship they cultivate, as well as the fun and friendly brand Piercing Day is.'
+    desktopImage='/images/projects/piercing-day/hero--desktop.webp'
+    mobileImage='/images/projects/piercing-day/hero--desktop.webp'
+    imageAltText='Lucky Me Go Cups Hero Shot'
+    brand='Piercing Day Studio'
+    client='Piercing Day Studio'
+    tags={['Print Design', 'Illustration']}
+    navBackgroundColor='var(--off-white)'
+    navBackgroundImageMobile='none'
+    navBackgroundImageDesktop='none'
+>
+<section class="body">
+    <div>
+        <div class="cash-vouchers">
+            <div>
+                <picture>
+                    <source srcset='/images/projects/piercing-day/cash-vouchers--desktop.webp' media="(min-width: 1280px)">
+                    <img src='/images/projects/piercing-day/cash-vouchers--mobile.webp' alt='Piercing Day Cash Vouchers' width="100%">
+                </picture>
+            </div>
+        </div>
+        <div class="copy--1">
+            <p class="small-body">Give the gift of piercing! Piercing Day gift vouchers are a convenient and versatile way to gift their products and services. Our team and Piercing Day’s came up with a quirky Medusa cat character as the focal point of the currency-inspired designs.</p>
+        </div>
+        <video src="/images/projects/piercing-day/insert--animations.webm" autoplay="true" loop="true" class="inserts"></video>
+        <div class="copy--2">
+            <p class="small-body">Aftercare booklets help clients how to properly care for their new piercing to promote healing and reduce the risk of infection. The idea was to come up with a stylish document that people will think twice about misplacing.</p>
+        </div>
+        <div class="stickers">
+            <video src="/images/projects/piercing-day/sticker-animation--mobile.webm" width="100%" autoplay="true" loop="true" class="mobile"></video>
+            <video src="/images/projects/piercing-day/sticker-animation--desktop.webm" width="100%" autoplay="true" loop="true" class="desktop"></video>
+            <p class="small-body">We injected more whimsy into the brand through Piercing Day’s sticker sheet. It’s a way for people to recognize the studio as a lifestyle hub wherein visiting your local piercing studio can be a personal milestone you’d like to commemorate.</p>
+        </div>
+        <div class="copy--3">
+            <p class="small-body">The studio also provides their services to kids. For a lot of them, getting their first piercing is a brave occasion. Piercing Day aims to recognize that with piercing certificates. It was important for us to design one that still felt fun but not too childlike––a piercing, after all, is also an acknowledgement of autonomy and freedom.</p>
+        </div>
+        <div class="kid-certificate">
+            <img src="/images/projects/piercing-day/kid-certificate.webp" alt="Piercing Day Kid's Certificate" width="100%">
+        </div>
+    </div>
+</section>
+
+</ProjectLayout>
+
+<style>
+    .body {
+        background-color: var(--off-white);
+
+        @media (width >= 1280px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+
+            @media (width >=1280px) {
+                gap: 120px;
+                align-items: center;
+            }
+
+            >.cash-vouchers {
+                > div {
+                    max-width: var(--max-width);
+                    padding: 0px 24px;
+
+                    @media (width >=768px) {
+                        padding: 0 56px;
+                    }
+
+                    @media (width >=1280px) {
+                        padding: 0 120px;
+                    }
+                }
+            }
+
+            > .copy--1 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px 120px;
+                }
+
+                > p {
+                    @media (width >= 1280px) {
+                        width: 872px;
+                    }
+                }
+            }
+
+            >.inserts {
+                width: 100%;
+            }
+
+            > .copy--2 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px
+                }
+
+                > p {
+                    @media (width >= 1280px) {
+                        width: 900px;
+                    }
+                }
+            }
+
+            >.stickers {
+                position: relative;
+
+                > p {
+                    position: absolute;
+                    text-align: center;
+                    width: 160px;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    transform: translateY(-50%);
+
+                    @media (width >=768px) {
+                        width: 280px;
+                        padding-top: 2rem;
+                    }
+
+                    @media (width >=1280px) {
+                        width: 446px;
+                    }
+                }
+
+                > .mobile {
+                    @media (width >=768px) {
+                        display: none;
+                    }
+                }
+
+                >. desktop {
+                    display: none;
+
+                    @media (width >=1280px) {
+                        display: initial;
+                        width: 100%;
+                    }
+                }
+            }
+
+            > .copy--3 {
+                padding: 0px 24px;
+                text-align: center;
+
+                @media (width >= 768px) {
+                    padding: 0px 56px;
+                }
+
+                @media (width >= 1280px) {
+                    padding: 0px;
+                }
+
+                > p {
+                    @media (width >= 1280px) {
+                        width: 800px;
+                    }
+                }
+            }
+
+            >.kid-certificate {
+                display: flex;
+            }
+        }
+    }
+</style>
+
+
