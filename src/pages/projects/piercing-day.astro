@@ -33,13 +33,13 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro';
         <div class="copy--1">
             <p class="small-body">Give the gift of piercing! Piercing Day gift vouchers are a convenient and versatile way to gift their products and services. Our team and Piercing Day’s came up with a quirky Medusa cat character as the focal point of the currency-inspired designs.</p>
         </div>
-        <video src="/images/projects/piercing-day/insert--animations.webm" autoplay="true" loop="true" class="inserts"></video>
+        <video src="/images/projects/piercing-day/insert--animations.webm" autoplay loop muted class="inserts"></video>
         <div class="copy--2">
             <p class="small-body">Aftercare booklets help clients how to properly care for their new piercing to promote healing and reduce the risk of infection. The idea was to come up with a stylish document that people will think twice about misplacing.</p>
         </div>
         <div class="stickers">
-            <video src="/images/projects/piercing-day/sticker-animation--mobile.webm" width="100%" autoplay="true" loop="true" class="mobile"></video>
-            <video src="/images/projects/piercing-day/sticker-animation--desktop.webm" width="100%" autoplay="true" loop="true" class="desktop"></video>
+            <video src="/images/projects/piercing-day/sticker-animation--mobile.webm" width="100%" autoplay loop muted class="mobile"></video>
+            <video src="/images/projects/piercing-day/sticker-animation--desktop.webm" autoplay loop muted class="desktop"></video>
             <p class="small-body">We injected more whimsy into the brand through Piercing Day’s sticker sheet. It’s a way for people to recognize the studio as a lifestyle hub wherein visiting your local piercing studio can be a personal milestone you’d like to commemorate.</p>
         </div>
         <div class="copy--3">
@@ -108,6 +108,10 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
             >.inserts {
                 width: 100%;
+
+                @media (width >=1280px) {
+                    width: 1440px;
+                }
             }
 
             > .copy--2 {
@@ -158,12 +162,12 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro';
                     }
                 }
 
-                >. desktop {
+                > .desktop {
                     display: none;
 
                     @media (width >=1280px) {
                         display: initial;
-                        width: 100%;
+                        width: 1600px;
                     }
                 }
             }
