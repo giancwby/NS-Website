@@ -61,8 +61,9 @@ import SecondaryLogo from './SecondaryLogo.astro';
 </style>
 
 <script>
+    //@ts-nocheck
     // Hide the preloader once the page has finished loading
-    window.addEventListener('load', function(){
+    window.addEventListener('DOMContentLoaded', function(){
         const preloader = document.getElementById('preloader');
         
         if (preloader.classList.contains("visible")) {
