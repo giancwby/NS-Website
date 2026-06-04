@@ -32,8 +32,8 @@ import Input from '../components/Input.astro';
         </section>
         <section>
             <div>
-                <h2>Drop Us a Message</h2>
-                <form target="_blank" action="https://formsubmit.co/gian@nsdesign.ph" method="POST">
+                <h2 class="form__heading">Drop Us a Message</h2>
+                <form target="_blank" action="https://formsubmit.co/inquiries@nsdesign.ph" method="POST">
                     <div>
                         <div>
                             <Input type="text" placeholder="Name"/>
@@ -45,7 +45,7 @@ import Input from '../components/Input.astro';
                 </form>
             </div>
         </section>
-        <section>
+        <section  class="hidden">
             <div>
                 <div>
                     <h2>Prefer to Meet in Person? <br> Let's have coffee.</h2>
@@ -58,6 +58,9 @@ import Input from '../components/Input.astro';
 </Layout>
 
 <style>
+    .hidden {
+        display: none;
+    }
     section:nth-of-type(1) {
         background-color: var(--blue);
         padding: 160px 24px 32px 24px;
@@ -191,7 +194,17 @@ import Input from '../components/Input.astro';
     }
 
     section:nth-of-type(3) {
-        display: none;
+        background-color: var(--off-white);
+        padding: 64px 24px 32px 24px;
+
+        @media (width >=768px) {
+            padding: 80px;
+        }
+
+        @media (width >= 1280px) {
+            padding: 160px 120px;
+        }
+        
         > div {
             display: flex;
             flex-direction: column;
@@ -204,8 +217,13 @@ import Input from '../components/Input.astro';
 
                 > div {
                     display: flex;
-                    flex-direction: row;
-                    gap: 32px;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    @media (width > 768px) {
+                        flex-direction: row;
+                        gap: 32px;
+                    }
                 }
             }
         }
@@ -291,6 +309,15 @@ import Input from '../components/Input.astro';
         &:hover {
             background-color: var(--black);
             color: var(--off-white);
+        }
+    }
+
+    .form__heading {
+        font-size: 2.5rem;
+        line-height: 100%;
+
+        @media (width >=1280px) {
+            font-size: var(--h2);
         }
     }
 </style>

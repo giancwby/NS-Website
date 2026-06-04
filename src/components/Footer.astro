@@ -16,27 +16,29 @@ import PrimaryLogo from './PrimaryLogo.astro';
                 <PrimaryLogo color="white" size="small"/>
             </a>
             <p class="small-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                NS Design’s business name is FINCHTRADE AND GALAPAGOS, INC.
+                <br>
+                It is located at 5F One Salcedo Building, 108 Salcedo St., Legaspi Village, Brgy. San Lorenzo, Makati City, Metro Manila, Philippines 1223.
             </p>
             <Button href="" color="whiteToBlack" isUppercase={true} text="Book a Meeting"/>
         </div>
         <div class="__right-col">
             <div class="__links-div">
-                <div class="__links-col">
+                <div class="__links-col col--hidden">
                     <p class="medium-body">Services</p>
                     <div class="__links">
                         <Link color="white" href="/work/" size="small" isUppercase={false} isNavlink={false}  text="Work"/>
                         <Link color="white" href="/services/" size="small" isUppercase={false} isNavlink={false} text="Services"/>
                     </div>
                 </div>
-                <div class="__links-col">
+                <div class="__links-col col--hidden">
                     <p class="medium-body">Company</p>
                     <div class="__links">
                         <Link color="white" href="/about/" size="small" isUppercase={false} isNavlink={false} text="About"/>
                         <Link color="white" href="/careers/" size="small" isUppercase={false} isNavlink={false} text="Careers"/>
                     </div>
                 </div>
-                <div class="__links-col">
+                <div class="__links-col col--temp">
                     <p class="medium-body">Reach Out</p>
                     <div class="__links">
                         <Link color="white" href="mailto:inquiries@nsdesign.ph" size="small" isUppercase={false} isNavlink={false} text="inquiries@nsdesign.ph"/>
@@ -61,7 +63,7 @@ import PrimaryLogo from './PrimaryLogo.astro';
         
         > div {
             width: 100%;
-            max-width: var(--max-width);
+            max-width: 1560px;
             padding: 40px 24px;
             display: flex;
             flex-direction: column;
@@ -72,10 +74,9 @@ import PrimaryLogo from './PrimaryLogo.astro';
             }
 
             @media (width >= 1280px) {
-                padding: 120px;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15%;
+                padding: 80px 120px;
+                flex-direction: row;
+                justify-content: space-between;
             }
 
             > .__left-col {
@@ -84,6 +85,7 @@ import PrimaryLogo from './PrimaryLogo.astro';
                 justify-content: space-between;
                 gap: 24px;
                 color: var(--off-white);
+                max-width: 530px;
             }
         
             > .__right-col {
@@ -131,15 +133,14 @@ import PrimaryLogo from './PrimaryLogo.astro';
                     display: flex;
                     flex-direction: column;
                     gap: 8px;
-
-                    @media (width >= 1280px) {
-                        flex-direction: row;
-                        gap: 126px;
-                    }  
                 }
             }
         }
 
     }
 
+    .col--hidden {
+        display: none !important;
+    }
+    
 </style>

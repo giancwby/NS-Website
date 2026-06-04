@@ -15,7 +15,9 @@ import PrimaryLogo from './PrimaryLogo.astro';
 			Natural Selection Design
 		</h1>
 		<p class="small-body">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+			NS Design is a Manila-based design studio that cultivates brands with clarity and purpose.
+			<br>
+			They create visual identities that are contemporary, considered, and just make you want to sing.
 		</p>
 		<img src="../../icons/down-white-arrow.svg" alt="">
 	</div>
@@ -70,6 +72,12 @@ import PrimaryLogo from './PrimaryLogo.astro';
 
 		> img {
 			width: 13px;
+		}
+	}
+
+	br {
+		@media (width < 431px) {
+			display: none;
 		}
 	}
 </style>

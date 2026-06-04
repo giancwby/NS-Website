@@ -7,13 +7,20 @@ import '../styles/typography.css';
 <section>
     <div>
         <h2 class="h2-italic">Keep Up With us on Socials</h2>
-        <p class="small-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+        <p class="small-body">Every now and then we post our latest projects on our Instragram account. You can also keep in touch with us here!</p>
+        <a href="https://www.instagram.com/nsdesign.ph/?hl=en" target="_blank" class="socials__grid">
+            <img src="/images/studio.jpg" alt="">
+            <img src="/images/pta.jpg" alt="">
+            <img src="/images/chips.jpg" alt="">
+            <img src="/images/blue.jpg" alt="">
+        </a>
     </div>
 </section>
 
 <style>
     section {
         background-color: var(--orange);
+        overflow: hidden;
 
         > div {
             display: flex;
@@ -37,10 +44,21 @@ import '../styles/typography.css';
                     font-size: var(--h2);
                 }
             }
-
-            > p {
-                max-width: 600px;
-            }
         }
+    }
+
+    .socials__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 20px;
+
+        @media (width > 431px) {
+            width: 120vw;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 32px;
+        }
+    }
+    img {
+        width: 100%;
     }
 </style>

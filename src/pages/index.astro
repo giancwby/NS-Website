@@ -15,42 +15,53 @@ import '../styles/typography.css';
 		<Hero />
 		<section>
 			<div>
-				<img src="../../images/home-hero.png" alt="">
-				<h2>
-					We're a small studio dedicated to our work & our clients
+				<img src="../../images/home-hero.png" alt="" style="display:none;">
+				<h2 class="header__body">
+					we’re small And we like to keep it that way 
 				</h2>
-				<p class="small-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+				<p class="small-body desc__body">
+					We’re small enough to remain nimble yet experienced enough to pack a punch.
+					<br>
+					We combine strategic effort with personal attention you can expect from a collaboration
+					that’s enthusiastic about creating something memorable and distinctly yours.
 				</p>
 				<div>
 					<h3>
 						Brands We've<br> Worked With
 					</h3>
-					<div class="small-body">
+					<div class="small-body clients__grid">
 						<div>
-							<p>Lorem ipsum</p>
+							<p>Lucky Me! Noodles</p>
 							<div></div>
-							<p>Consectetur Adipis</p>
+							<p>SkyFlakes Crackers</p>
 							<div></div>
-							<p>Sed do eiu</p>
+							<p>Fita Crackers</p>
 							<div></div>
 						</div>
 	
 						<div>
-							<p>Sed do eiu</p>
+							<p>Food Industries, Inc.</p>
 							<div></div>
-							<p>Consectetur Adipis</p>
+							<p>Unilab</p>
 							<div></div>
-							<p>Lorem ipsum</p>
+							<p>Century Pacific</p>
 							<div></div>
 						</div>
 	
 						<div>
-							<p>Sed do eiu</p>
+							<p>Hueza Bakery</p>
 							<div></div>
-							<p>Voluptatem accu</p>
+							<p>Future Fresh</p>
 							<div></div>
-							<p>Doloremque</p>
+							<p>Khao Khai Thai Chicken House</p>
+						</div>
+
+						<div>
+							<p>Palm Tree Abbey </p>
+							<div></div>
+							<p>Maker and Made Cafe</p>
+							<div></div>
+							<p>Maxine’s Nut Butters</p>
 						</div>
 					</div>
 				</div>
@@ -123,7 +134,7 @@ import '../styles/typography.css';
 					gap: 8px;
 					
 					@media (width >=1280px) {
-						grid-template-columns: repeat(3, 1fr);
+						grid-template-columns: repeat(4, minmax(0,1fr));
 						gap: 40px;
 					}
 	
@@ -132,13 +143,10 @@ import '../styles/typography.css';
 						flex-direction: column;
 						gap: 8px;
 						text-align: left;
-
-						> p {
-							text-align: center;
-						}
 	
 						> div{
 							border: solid 1px var(--off-white);
+							opacity: 0.3;
 						}
 
 						> div:nth-of-type(3) {
@@ -150,5 +158,12 @@ import '../styles/typography.css';
 				}
 			}
 		}
+	}
+
+	.header__body {
+		max-width: 900px;
+	}
+	.desc__body {
+		max-width: 650px;
 	}
 </style>
