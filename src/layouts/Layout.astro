@@ -10,32 +10,56 @@ import { SEO } from 'astro-seo';
 interface Props {
 	title: string;
 	navColor: "blue" | "off-white";
+	description?: string;
+	ogImage?: string;
+	canonicalURL?: string;
 }
 
 const { 
 	title,
-	navColor 
+	navColor,
+	description = "NS Design is a Manila-based design studio that cultivates brands with clarity and purpose. They create visual identities that are contemporary, considered, and just make you want to sing.",
+	ogImage = "/opengraph-image.jpg",
+	canonicalURL = Astro.url.href, 
 } = Astro.props as Props;
+
+const siteURL = Astro.site ?? new URL(Astro.url);
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-		<SEO 
-			title={title}
-			description="We are a small design studio that articulates visual identities with a collaborative approach."
-			openGraph={{
-				basic: {
-				  title: title,
-				  type: "Portfolio",
-				  image: "/images/projects/team-commonarea.webp",
-				}
-			}}
-		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!-- Primary SEO -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph (Facebook, LinkedIn, etc.) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, siteURL).toString()} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, siteURL).toString()} />
 	</head>
 	<body>
 		<Preloader />
@@ -48,6 +72,7 @@ const {
 
 
 <script>
+	//@ts-nocheck
 	const closeImg = document.getElementById('close');
 	const hamburgerImgBlue = document.getElementById('hamburger')
 	const mobileNav = document.getElementById('MobileNav');
