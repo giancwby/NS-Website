@@ -9,10 +9,10 @@ import '../styles/typography.css';
         <h2 class="h2-italic">Keep Up With us on Socials</h2>
         <p class="small-body">Every now and then we post our latest projects on our Instragram account. You can also keep in touch with us here!</p>
         <a href="https://www.instagram.com/nsdesign.ph/?hl=en" target="_blank" class="socials__grid">
-            <img src="/images/studio.jpg" alt="">
-            <img src="/images/pta.jpg" alt="">
-            <img src="/images/chips.jpg" alt="">
-            <img src="/images/blue.jpg" alt="">
+            <img src="/images/sumo.jpg" alt="">
+            <img src="/images/skyflakes.jpg" alt="">
+            <img src="/images/fita.jpg" alt="">
+            <img src="/images/future-fresh.jpg" alt="">
         </a>
     </div>
 </section>
@@ -51,6 +51,7 @@ import '../styles/typography.css';
         display: grid;
         grid-template-columns: repeat(2, minmax(0,1fr));
         gap: 20px;
+        margin-top: 20px;
 
         @media (width > 431px) {
             width: 120vw;
@@ -60,5 +61,12 @@ import '../styles/typography.css';
     }
     img {
         width: 100%;
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    img:hover {
+        transform: translateY(-5px);
     }
 </style>
